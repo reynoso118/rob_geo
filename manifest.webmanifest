@@ -1,0 +1,16 @@
+{
+  "name": "Yellowstone 2026",
+  "short_name": "Yellowstone",
+  "description": "Robert & Geo Take On Yellowstone & Grand Teton — a 5-day camper road trip itinerary, August 15-19, 2026.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#faf6ee",
+  "theme_color": "#1f3a2e",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

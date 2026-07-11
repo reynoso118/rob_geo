@@ -1,0 +1,243 @@
+{
+  "trip": {
+    "title": "Robert & Geo Take On Yellowstone & Grand Teton",
+    "subtitle": "A 5-Day Great American Camper Adventure",
+    "dateStart": "2026-08-15",
+    "dateEnd": "2026-08-19",
+    "routeSummary": "Salt Lake City loop through Alpine, Grand Teton, Yellowstone, and West Yellowstone, and back to Salt Lake City",
+    "stats": {
+      "plannedMiles": 843,
+      "rvNights": 4,
+      "parks": 2,
+      "rentalAllowanceMiles": 1300,
+      "flightOrigin": "SFO",
+      "flightDestination": "SLC"
+    }
+  },
+  "route": {
+    "pointToPointMiles": 769,
+    "pointToPointDriveTime": "13h 23m",
+    "plannedTotalMiles": 843,
+    "plannedTotalDriveTime": "about 21 hours across 5 days",
+    "note": "The master map shows the point-to-point navigation route (769 mi / 13h 23m). Day-by-day planned mileage below totals about 843 miles because it also includes driving inside the parks between stops.",
+    "stops": [
+      { "name": "Salt Lake City International Airport", "address": "776 N Terminal Dr, Salt Lake City, UT 84122", "query": "Salt Lake City International Airport" },
+      { "name": "Cruise America, Millcreek", "address": "4125 S State St, Millcreek, UT 84107", "query": "4125 S State St, Millcreek, UT 84107" },
+      { "name": "Alpine Valley RV Resort", "address": "64 Lunch Counter Lane, Alpine, WY 83128", "query": "64 Lunch Counter Lane, Alpine, WY 83128" },
+      { "name": "Headwaters Campground at Flagg Ranch", "address": "100 Grassy Lake Rd, Moran, WY 83013", "query": "100 Grassy Lake Rd, Moran, WY 83013" },
+      { "name": "Fishing Bridge RV Park", "address": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190", "query": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" },
+      { "name": "Yellowstone Park / West Gate KOA Holiday", "address": "3305 Targhee Pass Highway, 6 miles West on US-20, West Yellowstone, MT 59758", "query": "3305 Targhee Pass Highway, West Yellowstone, MT 59758" },
+      { "name": "Salt Lake City International Airport", "address": "776 N Terminal Dr, Salt Lake City, UT 84122", "query": "Salt Lake City International Airport" }
+    ]
+  },
+  "flights": {
+    "confirmation": "GIFPVV",
+    "outbound": {
+      "date": "Saturday, August 15, 2026",
+      "route": "SFO → SLC",
+      "depart": "5:50 AM",
+      "arrive": "8:40 AM",
+      "flightNumber": "DL1331",
+      "aircraft": "Airbus A321",
+      "stops": "Nonstop",
+      "duration": "1h 50m"
+    },
+    "return": {
+      "date": "Wednesday, August 19, 2026",
+      "route": "SLC → SFO",
+      "depart": "8:59 PM",
+      "arrive": "9:59 PM",
+      "flightNumber": "DL2762",
+      "aircraft": "Boeing 737-900",
+      "seats": "26B & 26C",
+      "duration": "1h"
+    },
+    "platinumNote": "Sky Priority boarding, free checked bags, and lounge time at SLC after the RV return."
+  },
+  "rv": {
+    "company": "Cruise America",
+    "confirmation": "792536",
+    "vehicle": "Ultra Compact RV",
+    "passengers": 2,
+    "mileageIncluded": 1300,
+    "mileagePlanned": 843,
+    "mileageBuffer": 457,
+    "pickup": {
+      "date": "Saturday, August 15",
+      "window": "1:00–4:00 PM",
+      "address": "4125 S State St, Millcreek, UT 84107",
+      "phone": "+18012880930",
+      "phoneDisplay": "(801) 288-0930"
+    },
+    "return": {
+      "date": "Wednesday, August 19",
+      "deadline": "before 11:00 AM",
+      "address": "4125 S State St, Millcreek, UT 84107"
+    },
+    "checklist": [
+      "Photograph exterior damage",
+      "Photograph interior condition",
+      "Test water system",
+      "Test electrical hookups",
+      "Test refrigerator",
+      "Confirm propane level",
+      "Confirm fuel return level",
+      "Confirm wastewater tank requirements",
+      "Confirm generator rules",
+      "Confirm cleaning policy",
+      "Confirm emergency contact number"
+    ]
+  },
+  "days": [
+    {
+      "id": "day1",
+      "date": "2026-08-15",
+      "dateLabel": "Saturday, August 15",
+      "title": "SFO → SLC → Alpine, Wyoming",
+      "mileage": "~300 miles",
+      "driveTime": "~5 hours",
+      "image": "assets/images/hero.svg",
+      "timeline": [
+        { "time": "5:50 AM", "desc": "Depart SFO on DL1331." },
+        { "time": "8:40 AM", "desc": "Land at SLC. Collect luggage and travel to Millcreek." },
+        { "time": "Morning", "desc": "Grocery and supply run near Millcreek — park stores are smaller and more expensive." },
+        { "time": "1:00–4:00 PM", "desc": "Pick up the Cruise America RV at 4125 S State St. Complete the vehicle walkthrough, document damage, test utilities, and confirm return requirements." },
+        { "time": "Afternoon", "desc": "Drive north through Idaho and US-89 into Alpine, Wyoming." }
+      ],
+      "highlights": ["Grocery run near Millcreek", "RV walkthrough & pickup", "Scenic drive north on US-89"],
+      "fromTrail": "",
+      "stay": {
+        "name": "Alpine Valley RV Resort",
+        "address": "64 Lunch Counter Lane, Alpine, WY 83128",
+        "details": "Pull-through site · check-in after 2:00 PM · check-out 10:00 AM · no generators.",
+        "phone": ""
+      },
+      "reservation": { "label": "Confirmation", "number": "R00000003536" },
+      "cancellation": "",
+      "optionalStops": [],
+      "warning": "RV pickup can run as late as 4:00 PM, which may push arrival at Alpine Valley into the evening. Keep dinner simple and confirm the campground's late-arrival procedure before the trip."
+    },
+    {
+      "id": "day2",
+      "date": "2026-08-16",
+      "dateLabel": "Sunday, August 16",
+      "title": "Grand Teton National Park",
+      "mileage": "~50 miles",
+      "driveTime": "~2–3 hours driving",
+      "image": "assets/images/grand-teton.svg",
+      "timeline": [
+        { "time": "Early AM", "desc": "Oxbow Bend for calm water, mountain reflections, and possible wildlife." },
+        { "time": "Morning", "desc": "Schwabacher Landing, then Mormon Row Historic District and the Moulton Barn." },
+        { "time": "Midday", "desc": "Jenny Lake: shore walk or boat to the Hidden Falls trail, depending on time and parking." },
+        { "time": "Afternoon", "desc": "Continue north on the John D. Rockefeller Jr. Memorial Parkway to Flagg Ranch." }
+      ],
+      "highlights": ["Oxbow Bend", "Schwabacher Landing", "Mormon Row Historic District", "Moulton Barn", "Jenny Lake", "Hidden Falls (optional)", "John D. Rockefeller Jr. Memorial Parkway"],
+      "fromTrail": "Oxbow Bend is best at dawn — the light is soft and the river is calm. Schwabacher Landing is just south on US-89. Mormon Row is one of the most-photographed spots in America — the Moulton Barn framed by the Teton range is extraordinary. Sequence these stops south-to-north so the drive to Flagg Ranch flows naturally.",
+      "stay": {
+        "name": "Headwaters Campground at Flagg Ranch",
+        "address": "100 Grassy Lake Rd, Moran, WY 83013",
+        "details": "Grand Teton National Park · Site 317, 300s · water, sewer, 50A electric · check-in 2:00 PM · check-out 11:00 AM.",
+        "phone": ""
+      },
+      "reservation": { "label": "Reservation", "number": "0805777960-1" },
+      "cancellation": "Full refund if cancelled by August 14. No refund after August 15. Verify the policy directly with the campground.",
+      "optionalStops": ["Hidden Falls (via boat or trail from Jenny Lake)"],
+      "warning": ""
+    },
+    {
+      "id": "day3",
+      "date": "2026-08-17",
+      "dateLabel": "Monday, August 17",
+      "title": "South Yellowstone → Canyon",
+      "mileage": "~90 miles",
+      "driveTime": "~3–4 hours",
+      "image": "assets/images/yellowstone-lake.svg",
+      "timeline": [
+        { "time": "Morning", "desc": "Enter through Yellowstone's South Entrance; stop at Lewis Falls." },
+        { "time": "Late AM", "desc": "West Thumb Geyser Basin at the edge of Yellowstone Lake." },
+        { "time": "Midday", "desc": "Yellowstone Lake and Mud Volcano." },
+        { "time": "Afternoon", "desc": "Hayden Valley for bison and wildlife; continue to Canyon for Artist Point and the Lower Falls overlooks." }
+      ],
+      "highlights": ["South Entrance", "Lewis Falls", "West Thumb Geyser Basin", "Yellowstone Lake", "Mud Volcano", "Hayden Valley", "Artist Point", "Lower Falls", "Canyon area"],
+      "fromTrail": "West Thumb Geyser Basin is directly on your route after the South Entrance — geysers sitting at the lake edge is a genuinely strange and beautiful sight. Don't skip it. Artist Point at Canyon is the signature overlook: the Grand Canyon of the Yellowstone with its vivid orange and yellow canyon walls dropping to the Lower Falls. The rainbow in the mist is visible in morning light.",
+      "stay": {
+        "name": "Fishing Bridge RV Park",
+        "address": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190",
+        "details": "RV only · 30 ft max · check-in after 1:00 PM · check-out 11:00 AM.",
+        "phone": "+13073447311",
+        "phoneDisplay": "(307) 344-7311"
+      },
+      "reservation": { "label": "Itinerary", "number": "20880487" },
+      "cancellation": "$25 fee after July 18. Deposit forfeited after August 10. Verify in the reservation portal.",
+      "optionalStops": [],
+      "warning": ""
+    },
+    {
+      "id": "day4",
+      "date": "2026-08-18",
+      "dateLabel": "Tuesday, August 18",
+      "title": "Northern Yellowstone → West Yellowstone",
+      "mileage": "~160 miles",
+      "driveTime": "~5–6 hours driving",
+      "image": "assets/images/lamar-valley.svg",
+      "timeline": [
+        { "time": "7:00 AM", "desc": "Leave Fishing Bridge early — this is the big day." },
+        { "time": "Morning", "desc": "Tower Fall, then Lamar Valley. Drive slowly and allow for wildlife traffic." },
+        { "time": "Midday", "desc": "Mammoth Hot Springs: lower terraces and, if time permits, the upper terrace loop." },
+        { "time": "Afternoon", "desc": "Norris Geyser Basin, Old Faithful, and Grand Prismatic Spring via the Fairy Falls overlook." },
+        { "time": "Evening", "desc": "Optional Firehole Lake Drive, then exit through the West Entrance." }
+      ],
+      "highlights": ["Tower Fall", "Lamar Valley", "Mammoth Hot Springs", "Lower terraces", "Upper terrace loop", "Norris Geyser Basin", "Porcelain Basin", "Old Faithful", "Grand Prismatic Spring", "Fairy Falls overlook", "Firehole Lake Drive", "West Entrance"],
+      "fromTrail": "Leave Fishing Bridge by 7 AM — this is the big day. Lamar Valley bison will stop your vehicle; build buffer time. For Grand Prismatic, the Fairy Falls overlook is the classic aerial view — the boardwalk at lake level doesn't show the colors at all. Norris Geyser Basin is often skipped but is the hottest, most active area in the park: the Porcelain Basin loop is 800 meters and unmissable.",
+      "stay": {
+        "name": "Yellowstone Park / West Gate KOA Holiday",
+        "address": "3305 Targhee Pass Highway, 6 miles West on US-20, West Yellowstone, MT 59758",
+        "details": "Back-in site · 30/20A water/electric · check-in 1:00 PM · check-out 11:00 AM · Wi-Fi password revealed in Reservations.",
+        "phone": "",
+        "wifiPassword": "westgate23"
+      },
+      "reservation": { "label": "Reservation", "number": "22318444" },
+      "cancellation": "Call 800-562-7591 by 4:00 PM August 11. Text and email cancellations are not accepted.",
+      "optionalStops": ["Norris Geyser Basin", "Firehole Lake Drive"],
+      "warning": "This is an aggressive day that may take 10–12 or more hours with traffic, parking, and wildlife jams. Norris or Firehole Lake Drive should be treated as optional if time becomes tight."
+    },
+    {
+      "id": "day5",
+      "date": "2026-08-19",
+      "dateLabel": "Wednesday, August 19",
+      "title": "West Yellowstone → SLC → Home",
+      "mileage": "~243 miles",
+      "driveTime": "~4 hours in ideal conditions",
+      "image": "assets/images/artist-point.svg",
+      "timeline": [
+        { "time": "5:30–6:00 AM", "desc": "Leave West Gate KOA. Take US-20 to I-15 south through Idaho." },
+        { "time": "Before 11:00 AM", "desc": "Return the RV in Millcreek. Refill fuel/propane and complete tank requirements per the rental contract." },
+        { "time": "Afternoon", "desc": "Free time in Salt Lake City, or head to the airport and relax before the evening flight." },
+        { "time": "8:59 PM", "desc": "Depart SLC on DL2762; arrive SFO at 9:59 PM." }
+      ],
+      "highlights": ["US-20 to I-15 South", "RV return in Millcreek", "Free afternoon in Salt Lake City"],
+      "fromTrail": "",
+      "stay": null,
+      "reservation": null,
+      "cancellation": "",
+      "optionalStops": [],
+      "warning": "The drive from West Yellowstone to Millcreek plus fuel, tank service, cleaning, and traffic leaves limited margin before the 11:00 AM RV return. Confirm whether the return appointment can be adjusted and prepare the RV the previous night."
+    }
+  ],
+  "cancellationsPending": [
+    {
+      "name": "Yellowstone RV Park, Gardiner",
+      "confirmation": "162327",
+      "phone": "+14068487496",
+      "phoneDisplay": "(406) 848-7496",
+      "deadline": "Cancel by August 13"
+    },
+    {
+      "name": "Bear Canyon Campground, Bozeman",
+      "confirmation": "2026050558",
+      "phone": "+14065871575",
+      "phoneDisplay": "(406) 587-1575",
+      "deadline": "Cancel by August 17"
+    }
+  ]
+}

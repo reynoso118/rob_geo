@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="mammothTitle">
+<title id="mammothTitle">Illustration of the white travertine terraces at Mammoth Hot Springs</title>
+<defs>
+  <linearGradient id="msky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1f3a2e"/>
+    <stop offset="100%" stop-color="#dfe6db"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#msky)"/>
+<polygon points="0,420 250,340 500,410 750,330 1000,400 1200,350 1200,470 0,470" fill="#2d5240"/>
+<g fill="#f4ecdc">
+  <path d="M0 470 L1200 470 L1200 520 Q 900 500 700 530 T 300 520 T 0 500 Z"/>
+  <path d="M0 520 L1200 520 L1200 570 Q 850 555 650 580 T 250 570 T 0 550 Z" opacity="0.95"/>
+  <path d="M0 575 L1200 575 L1200 630 Q 800 610 600 635 T 200 620 T 0 600 Z" opacity="0.92"/>
+  <path d="M0 635 L1200 635 L1200 700 Q 750 675 550 705 T 150 685 T 0 660 Z" opacity="0.9"/>
+  <path d="M0 705 L1200 705 L1200 800 L0 800 Z" opacity="0.88"/>
+</g>
+<g fill="#c8922a" opacity="0.35">
+  <ellipse cx="300" cy="500" rx="120" ry="14"/>
+  <ellipse cx="700" cy="560" rx="150" ry="14"/>
+  <ellipse cx="450" cy="620" rx="130" ry="14"/>
+  <ellipse cx="850" cy="680" rx="160" ry="14"/>
+</g>
+<g fill="#faf6ee" opacity="0.6">
+  <ellipse cx="900" cy="200" rx="90" ry="30"/>
+  <ellipse cx="600" cy="150" rx="120" ry="26"/>
+</g>
+</svg>
