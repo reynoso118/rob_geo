@@ -3,7 +3,7 @@
    available with no signal. Third-party map links are never cached —
    they simply pass through to the network and fail offline as expected. */
 
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const CACHE_NAME = "yellowstone-2026-" + CACHE_VERSION;
 
 // Paths are relative to this file's location so the app works correctly
@@ -26,9 +26,7 @@ const PRECACHE_URLS = [
   "./assets/images/hero.svg",
   "./assets/images/grand-teton.svg",
   "./assets/images/yellowstone-lake.svg",
-  "./assets/images/grand-prismatic.svg",
   "./assets/images/lamar-valley.svg",
-  "./assets/images/mammoth-hot-springs.svg",
   "./assets/images/artist-point.svg",
 ];
 

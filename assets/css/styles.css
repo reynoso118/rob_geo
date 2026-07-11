@@ -333,11 +333,6 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--pine); font-weight: 700
 }
 .loc-link:hover, .loc-link:focus-visible { color: var(--rust); text-decoration-color: var(--rust); }
 
-.mini-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
-.mini-gallery figure { margin: 0; border-radius: var(--radius-sm); overflow: hidden; background: var(--pine); }
-.mini-gallery img { width: 100%; height: 100px; object-fit: cover; display: block; }
-.mini-gallery figcaption { font-size: 11px; color: var(--muted); padding: 5px 2px 0; }
-
 .highlight-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .chip {
   font-size: 12px; font-weight: 700; background: #eef4ea; color: var(--pine); padding: 5px 10px;
