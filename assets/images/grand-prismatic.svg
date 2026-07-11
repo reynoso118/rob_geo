@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="prismTitle">
+<title id="prismTitle">Illustration of Grand Prismatic Spring viewed from above, with concentric rings of color and steam</title>
+<defs>
+  <radialGradient id="ring1" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#e8c86a"/>
+    <stop offset="55%" stop-color="#c8922a"/>
+    <stop offset="100%" stop-color="#b8521f"/>
+  </radialGradient>
+  <radialGradient id="core" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#dff1ea"/>
+    <stop offset="60%" stop-color="#3c8f7d"/>
+    <stop offset="100%" stop-color="#1f3a2e"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="800" fill="#1f3a2e"/>
+<rect width="1200" height="800" fill="#0f1f18" opacity="0.25"/>
+<ellipse cx="600" cy="420" rx="520" ry="330" fill="url(#ring1)"/>
+<ellipse cx="600" cy="420" rx="420" ry="266" fill="#b8521f"/>
+<ellipse cx="600" cy="420" rx="330" ry="208" fill="#c8922a"/>
+<ellipse cx="600" cy="420" rx="235" ry="150" fill="#e8c86a"/>
+<ellipse cx="600" cy="420" rx="150" ry="96" fill="url(#core)"/>
+<g opacity="0.5" fill="#faf6ee">
+  <ellipse cx="300" cy="140" rx="120" ry="40"/>
+  <ellipse cx="950" cy="180" rx="150" ry="46"/>
+  <ellipse cx="620" cy="90" rx="180" ry="36"/>
+</g>
+</svg>

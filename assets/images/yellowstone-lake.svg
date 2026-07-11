@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="lakeTitle">
+<title id="lakeTitle">Illustration of Yellowstone Lake at midday with distant forested shoreline</title>
+<defs>
+  <linearGradient id="lsky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#2d5240"/>
+    <stop offset="100%" stop-color="#f4ecdc"/>
+  </linearGradient>
+  <linearGradient id="lwater" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1f3a2e"/>
+    <stop offset="100%" stop-color="#0f1f18"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#lsky)"/>
+<circle cx="950" cy="180" r="60" fill="#faf6ee" opacity="0.9"/>
+<polygon points="0,380 150,320 320,370 480,300 650,360 820,310 1000,370 1200,330 1200,420 0,420" fill="#1f3a2e"/>
+<rect x="0" y="410" width="1200" height="390" fill="url(#lwater)"/>
+<path d="M0 460 Q 300 440 600 465 T 1200 455" stroke="#c8922a" stroke-width="2" fill="none" opacity="0.25"/>
+<path d="M0 540 Q 300 520 600 545 T 1200 535" stroke="#e8c86a" stroke-width="2" fill="none" opacity="0.18"/>
+<path d="M0 630 Q 300 610 600 635 T 1200 625" stroke="#f4ecdc" stroke-width="2" fill="none" opacity="0.12"/>
+</svg>

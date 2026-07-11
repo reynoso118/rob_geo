@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="heroTitle">
+<title id="heroTitle">Illustration of a camper van on a mountain road at sunset in Grand Teton and Yellowstone country</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#3c6650"/>
+    <stop offset="45%" stop-color="#c8922a"/>
+    <stop offset="100%" stop-color="#e8c86a"/>
+  </linearGradient>
+  <linearGradient id="farRidge" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#2d5240"/>
+    <stop offset="100%" stop-color="#1f3a2e"/>
+  </linearGradient>
+  <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#faf6ee"/>
+    <stop offset="100%" stop-color="#e8c86a" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#sky)"/>
+<circle cx="860" cy="300" r="170" fill="url(#sun)"/>
+<circle cx="860" cy="300" r="70" fill="#faf6ee" opacity="0.95"/>
+<polygon points="0,470 180,300 340,430 520,260 700,440 880,290 1050,430 1200,340 1200,800 0,800" fill="url(#farRidge)" opacity="0.55"/>
+<polygon points="0,560 220,380 430,520 640,340 860,540 1080,400 1200,500 1200,800 0,800" fill="#1f3a2e"/>
+<polygon points="0,620 260,460 500,600 760,420 1000,610 1200,520 1200,800 0,800" fill="#0f1f18"/>
+<rect x="0" y="620" width="1200" height="180" fill="#0f1f18"/>
+<path d="M0 700 C 250 660, 400 740, 650 690 S 1000 650, 1200 700 L1200 800 0 800 Z" fill="#16281f"/>
+<g transform="translate(560,330) scale(0.62)">
+  <rect x="0" y="30" width="220" height="90" rx="16" fill="#f4ecdc"/>
+  <rect x="0" y="30" width="220" height="34" rx="16" fill="#b8521f"/>
+  <rect x="140" y="14" width="70" height="46" rx="10" fill="#f4ecdc"/>
+  <circle cx="45" cy="128" r="22" fill="#0f1f18"/>
+  <circle cx="45" cy="128" r="10" fill="#7a7060"/>
+  <circle cx="185" cy="128" r="22" fill="#0f1f18"/>
+  <circle cx="185" cy="128" r="10" fill="#7a7060"/>
+  <rect x="16" y="70" width="60" height="30" rx="4" fill="#e8c86a" opacity="0.85"/>
+</g>
+<path d="M0 760 Q 600 700 1200 760 L1200 800 0 800 Z" fill="#0a1712"/>
+</svg>

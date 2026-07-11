@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Robert &amp; Geo Take On Yellowstone &amp; Grand Teton</title>
+<meta name="description" content="A five-day camper road trip itinerary through Grand Teton and Yellowstone, August 15–19, 2026. Works offline once installed.">
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1f3a2e">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Yellowstone">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div aria-live="polite" class="visually-hidden" id="liveRegion"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <img src="assets/icons/icon-192.png" alt="" width="28" height="28">
+      <span>Robert &amp; Geo — Yellowstone 2026</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#route" data-nav="route">Route</a>
+      <a href="#days" data-nav="days">Days</a>
+      <a href="#checklist" data-nav="checklist">Checklist</a>
+      <a href="#reservations" data-nav="reservations">Reservations</a>
+    </nav>
+    <span class="status-pill" id="statusPillTop" data-state="not-cached">
+      <span class="status-dot"></span><span class="status-text">Checking…</span>
+    </span>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="home" aria-label="Trip overview">
+    <div class="hero-media">
+      <img src="assets/images/hero.svg" alt="Illustration of a camper van on a mountain road at sunset in Grand Teton and Yellowstone country" width="1200" height="800">
+    </div>
+    <div class="hero-inner wrap">
+      <div class="hero-eyebrow">
+        <span>August 15–19, 2026 · Salt Lake City loop</span>
+        <span class="status-pill" id="statusPillHero" data-state="not-cached">
+          <span class="status-dot"></span><span class="status-text">Checking…</span>
+        </span>
+      </div>
+      <h1>Robert &amp; Geo Take On Yellowstone &amp; Grand Teton</h1>
+      <p class="subtitle">A 5-Day Great American Camper Adventure</p>
+      <p class="route-line">Salt Lake City loop through Alpine, Grand Teton, Yellowstone, West Yellowstone, and back to Salt Lake City.</p>
+
+      <div class="countdown" id="countdown" role="status">
+        <span class="cd-label">Departure countdown</span>
+        <span class="cd-value" id="countdownValue">—</span>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><b>843 mi</b><span>Planned route</span></div>
+        <div class="stat-card"><b>4 nights</b><span>RV camping</span></div>
+        <div class="stat-card"><b>2 parks</b><span>Yellowstone + Teton</span></div>
+        <div class="stat-card"><b>SFO ⇄ SLC</b><span>Flight route</span></div>
+      </div>
+
+      <div class="quick-actions">
+        <a class="qa-btn" href="#days" id="qaToday"><span class="qa-icon">📍</span>View today</a>
+        <a class="qa-btn" href="#route"><span class="qa-icon">🗺️</span>Open route</a>
+        <a class="qa-btn" href="#checklist"><span class="qa-icon">✅</span>View checklist</a>
+        <a class="qa-btn" href="#reservations"><span class="qa-icon">🎫</span>View reservations</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- ROUTE -->
+    <section class="section" id="route" aria-labelledby="routeTitle">
+      <div class="section-head">
+        <div class="section-kicker">The route</div>
+        <h2 class="section-title" id="routeTitle">Salt Lake City loop</h2>
+        <p class="section-lede">Utah → Wyoming → Yellowstone → Montana border → back to Utah. The screenshot below is bundled with the app so the master map is always available, even with no signal.</p>
+      </div>
+
+      <figure class="map-card">
+        <img src="assets/images/route-map.png" alt="Google Maps screenshot of the full loop: Salt Lake City International Airport to 4125 S State Street in Millcreek, north to Alpine Wyoming, to Headwaters Campground near Flagg Ranch, to Yellowstone Park West Gate KOA, and back to Salt Lake City. Total distance 769 miles, 13 hours 23 minutes of driving." loading="eager" width="1226" height="919">
+        <figcaption class="map-caption">Offline master route map. SLC Airport → Cruise America (Millcreek) → Alpine → Headwaters/Flagg Ranch → Fishing Bridge → West Yellowstone → Millcreek → SLC Airport.</figcaption>
+      </figure>
+
+      <div class="route-stats">
+        <div class="route-stat"><b>769 mi</b><span>Point-to-point route</span></div>
+        <div class="route-stat"><b>13h 23m</b><span>Point-to-point drive time</span></div>
+        <div class="route-stat"><b>~843 mi</b><span>Total planned driving (incl. in-park)</span></div>
+        <div class="route-stat"><b>~21 hrs</b><span>Estimated driving, all 5 days</span></div>
+      </div>
+      <p class="section-lede">The point-to-point figures come straight off the master map above. The ~843-mile planned total also folds in the driving done inside the parks between stops each day — that's the number that matters against the RV's 1,300-mile allowance.</p>
+
+      <h3 class="card-title mt-0" style="margin-top:22px;font-size:16px;">Ordered stops</h3>
+      <ol class="stop-list" id="stopList">
+        <!-- Stops populated by app.js from data below; noscript fallback follows -->
+        <li class="stop-row"><span class="stop-index">1</span><div class="stop-info"><div class="stop-name">Salt Lake City International Airport</div><div class="stop-addr">776 N Terminal Dr, Salt Lake City, UT 84122</div></div><a class="stop-map-btn" data-maps-query="Salt Lake City International Airport" href="https://www.google.com/maps/search/?api=1&amp;query=Salt%20Lake%20City%20International%20Airport" target="_blank" rel="noopener">Maps ↗</a></li>
+        <li class="stop-row"><span class="stop-index">2</span><div class="stop-info"><div class="stop-name">Cruise America, Millcreek</div><div class="stop-addr">4125 S State St, Millcreek, UT 84107</div></div><a class="stop-map-btn" data-maps-query="4125 S State St, Millcreek, UT 84107" href="https://www.google.com/maps/search/?api=1&amp;query=4125%20S%20State%20St%2C%20Millcreek%2C%20UT%2084107" target="_blank" rel="noopener">Maps ↗</a></li>
+        <li class="stop-row"><span class="stop-index">3</span><div class="stop-info"><div class="stop-name">Alpine Valley RV Resort</div><div class="stop-addr">64 Lunch Counter Lane, Alpine, WY 83128</div></div><a class="stop-map-btn" data-maps-query="64 Lunch Counter Lane, Alpine, WY 83128" href="https://www.google.com/maps/search/?api=1&amp;query=64%20Lunch%20Counter%20Lane%2C%20Alpine%2C%20WY%2083128" target="_blank" rel="noopener">Maps ↗</a></li>
+        <li class="stop-row"><span class="stop-index">4</span><div class="stop-info"><div class="stop-name">Headwaters Campground at Flagg Ranch</div><div class="stop-addr">100 Grassy Lake Rd, Moran, WY 83013</div></div><a class="stop-map-btn" data-maps-query="100 Grassy Lake Rd, Moran, WY 83013" href="https://www.google.com/maps/search/?api=1&amp;query=100%20Grassy%20Lake%20Rd%2C%20Moran%2C%20WY%2083013" target="_blank" rel="noopener">Maps ↗</a></li>
+        <li class="stop-row"><span class="stop-index">5</span><div class="stop-info"><div class="stop-name">Fishing Bridge RV Park</div><div class="stop-addr">22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190</div></div><a class="stop-map-btn" data-maps-query="22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" href="https://www.google.com/maps/search/?api=1&amp;query=22%20Fishing%20Bridge%20RV%20Park%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190" target="_blank" rel="noopener">Maps ↗</a></li>
+        <li class="stop-row"><span class="stop-index">6</span><div class="stop-info"><div class="stop-name">Yellowstone Park / West Gate KOA Holiday</div><div class="stop-addr">3305 Targhee Pass Hwy, West Yellowstone, MT 59758</div></div><a class="stop-map-btn" data-maps-query="3305 Targhee Pass Highway, West Yellowstone, MT 59758" href="https://www.google.com/maps/search/?api=1&amp;query=3305%20Targhee%20Pass%20Highway%2C%20West%20Yellowstone%2C%20MT%2059758" target="_blank" rel="noopener">Maps ↗</a></li>
+        <li class="stop-row"><span class="stop-index">7</span><div class="stop-info"><div class="stop-name">Salt Lake City International Airport</div><div class="stop-addr">776 N Terminal Dr, Salt Lake City, UT 84122</div></div><a class="stop-map-btn" data-maps-query="Salt Lake City International Airport" href="https://www.google.com/maps/search/?api=1&amp;query=Salt%20Lake%20City%20International%20Airport" target="_blank" rel="noopener">Maps ↗</a></li>
+      </ol>
+      <p class="map-caption" style="padding-left:0">Map buttons need a connection. On iPhone and Mac they open Apple Maps; everywhere else they open Google Maps in a new tab — no API key required.</p>
+    </section>
+
+    <!-- FLIGHTS -->
+    <section class="section" id="flights" aria-labelledby="flightsTitle">
+      <div class="section-head">
+        <div class="section-kicker">Confirmed flights</div>
+        <h2 class="section-title" id="flightsTitle">SFO ⇄ SLC</h2>
+      </div>
+      <div class="pass-grid">
+        <article class="pass">
+          <div class="pass-top">
+            <div>
+              <div class="pass-eyebrow">Outbound · Sat, Aug 15, 2026</div>
+              <div class="pass-route">SFO → SLC</div>
+            </div>
+            <div class="pass-eyebrow">DL1331</div>
+          </div>
+          <div class="pass-times">5:50 AM → 8:40 AM</div>
+          <div class="pass-detail">Airbus A321 · Nonstop · 1h 50m</div>
+          <div class="pass-conf reveal-row" data-reveal-group="flight">
+            <span class="pass-detail" style="margin-top:0">Confirmation:</span>
+            <span class="reveal-value" data-secret="GIFPVV">••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+        </article>
+        <article class="pass">
+          <div class="pass-top">
+            <div>
+              <div class="pass-eyebrow">Return · Wed, Aug 19, 2026</div>
+              <div class="pass-route">SLC → SFO</div>
+            </div>
+            <div class="pass-eyebrow">DL2762</div>
+          </div>
+          <div class="pass-times">8:59 PM → 9:59 PM</div>
+          <div class="pass-detail">Boeing 737-900 · Seats 26B &amp; 26C</div>
+          <div class="pass-conf reveal-row" data-reveal-group="flight">
+            <span class="pass-detail" style="margin-top:0">Confirmation:</span>
+            <span class="reveal-value" data-secret="GIFPVV">••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+        </article>
+      </div>
+      <div class="alert alert-green"><span class="alert-icon">✈️</span><span><strong>Platinum Medallion:</strong> Sky Priority boarding, free checked bags, and lounge time at SLC after the RV return.</span></div>
+    </section>
+
+    <!-- RV RENTAL -->
+    <section class="section" id="rv" aria-labelledby="rvTitle">
+      <div class="section-head">
+        <div class="section-kicker">RV rental</div>
+        <h2 class="section-title" id="rvTitle">Cruise America</h2>
+        <p class="section-lede">Ultra Compact RV · 2 passengers</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Confirmation</div>
+        <div class="reveal-row" data-reveal-group="rv">
+          <span class="reveal-value" data-secret="792536">••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+
+        <div class="rv-grid">
+          <div>
+            <div class="card-label">Pick up</div>
+            <div class="card-meta">
+              <strong>Saturday, August 15 · 1:00–4:00 PM</strong><br>
+              4125 S State St, Millcreek, UT 84107<br>
+              <a href="tel:+18012880930">(801) 288-0930</a>
+            </div>
+          </div>
+          <div>
+            <div class="card-label">Return</div>
+            <div class="card-meta">
+              <strong>Wednesday, August 19 · before 11:00 AM</strong><br>
+              Same location
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn" href="tel:+18012880930">📞 Call Cruise America</a>
+          <a class="btn" data-maps-query="4125 S State St, Millcreek, UT 84107" href="https://www.google.com/maps/search/?api=1&amp;query=4125%20S%20State%20St%2C%20Millcreek%2C%20UT%2084107" target="_blank" rel="noopener">🗺️ Open in Maps</a>
+          <button class="btn" data-copy-text="4125 S State St, Millcreek, UT 84107" type="button">⧉ Copy address</button>
+        </div>
+
+        <div class="mileage-bar">
+          <div class="mileage-track"><div class="mileage-fill" style="width:64.8%"></div></div>
+          <div class="mileage-legend"><span>~843 mi planned</span><span>1,300 mi included</span></div>
+        </div>
+        <div class="alert alert-green"><span class="alert-icon">🛣️</span><span><strong>Mileage buffer:</strong> about 457 miles of slack beyond the planned route.</span></div>
+      </div>
+
+      <h3 class="card-title" style="margin-top:22px;font-size:16px;">Pickup &amp; return walkthrough</h3>
+      <div class="checklist-group" style="margin-top:10px">
+        <div id="rvChecklist"></div>
+      </div>
+    </section>
+
+    <!-- DAYS -->
+    <section class="section" id="days" aria-labelledby="daysTitle">
+      <div class="section-head">
+        <div class="section-kicker">Day by day</div>
+        <h2 class="section-title" id="daysTitle">Five days, one loop</h2>
+        <p class="section-lede">Tap a day to expand it. Each day remembers whether you've reviewed it.</p>
+      </div>
+
+      <div class="day-list" id="dayList">
+
+        <!-- DAY 1 -->
+        <article class="day-card" id="day1" data-date="2026-08-15">
+          <h3>
+            <button class="day-header" aria-expanded="false" aria-controls="day1-body" id="day1-header">
+              <span class="day-thumb"><img src="assets/images/hero.svg" alt="" loading="lazy"></span>
+              <span class="day-header-text">
+                <span class="day-date">Saturday, August 15</span>
+                <span class="day-title">SFO → SLC → Alpine, Wyoming</span>
+                <span class="day-tags"><span class="day-tag">✈️ Flight day</span><span class="day-tag">~300 mi</span><span class="day-tag">~5h drive</span></span>
+              </span>
+              <span class="day-reviewed-badge">✓ Reviewed</span>
+              <span class="day-chevron" aria-hidden="true">▾</span>
+            </button>
+          </h3>
+          <div class="day-body" id="day1-body" role="region" aria-labelledby="day1-header" hidden>
+            <div class="timeline">
+              <div class="timeline-row"><div class="timeline-time">5:50 AM</div><div class="timeline-desc">Depart SFO on DL1331.</div></div>
+              <div class="timeline-row"><div class="timeline-time">8:40 AM</div><div class="timeline-desc">Land at SLC. Collect luggage and travel to Millcreek.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Morning</div><div class="timeline-desc">Grocery and supply run near Millcreek — park stores are smaller and more expensive.</div></div>
+              <div class="timeline-row"><div class="timeline-time">1–4 PM</div><div class="timeline-desc">Pick up the Cruise America RV at 4125 S State St. Complete the vehicle walkthrough, document damage, test utilities, and confirm return requirements.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc">Drive north through Idaho and US-89 into Alpine, Wyoming.</div></div>
+            </div>
+
+            <div class="highlight-chips">
+              <span class="chip">Grocery run</span><span class="chip">RV pickup &amp; walkthrough</span><span class="chip">Drive north on US-89</span>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block-label">Stay · confirmed</div>
+              <div class="info-block-body">
+                <strong>Alpine Valley RV Resort</strong><br>
+                64 Lunch Counter Lane, Alpine, WY 83128<br>
+                Pull-through site · check-in after 2:00 PM · check-out 10:00 AM · no generators.
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block-label">Reservation</div>
+              <div class="reveal-row" data-reveal-group="day1">
+                <span class="reveal-value" data-secret="R00000003536">••••••••••••</span>
+                <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+                <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+              </div>
+            </div>
+
+            <div class="alert alert-amber"><span class="alert-icon">⚠️</span><span><strong>Realistic timing:</strong> RV pickup can run as late as 4:00 PM, which may push arrival at Alpine Valley into the evening. Keep dinner simple and confirm the campground's late-arrival procedure before the trip.</span></div>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" data-maps-query="64 Lunch Counter Lane, Alpine, WY 83128" href="https://www.google.com/maps/search/?api=1&amp;query=64%20Lunch%20Counter%20Lane%2C%20Alpine%2C%20WY%2083128" target="_blank" rel="noopener">🗺️ Open in Maps</a>
+              <button class="btn" data-copy-text="64 Lunch Counter Lane, Alpine, WY 83128" type="button">⧉ Copy address</button>
+              <button class="btn" data-mark-reviewed type="button">✓ Mark day reviewed</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 2 -->
+        <article class="day-card" id="day2" data-date="2026-08-16">
+          <h3>
+            <button class="day-header" aria-expanded="false" aria-controls="day2-body" id="day2-header">
+              <span class="day-thumb"><img src="assets/images/grand-teton.svg" alt="" loading="lazy"></span>
+              <span class="day-header-text">
+                <span class="day-date">Sunday, August 16</span>
+                <span class="day-title">Grand Teton National Park</span>
+                <span class="day-tags"><span class="day-tag">~50 mi in park</span><span class="day-tag">Photography</span></span>
+              </span>
+              <span class="day-reviewed-badge">✓ Reviewed</span>
+              <span class="day-chevron" aria-hidden="true">▾</span>
+            </button>
+          </h3>
+          <div class="day-body" id="day2-body" role="region" aria-labelledby="day2-header" hidden>
+            <div class="timeline">
+              <div class="timeline-row"><div class="timeline-time">Early AM</div><div class="timeline-desc"><strong>Oxbow Bend</strong> for calm water, mountain reflections, and possible wildlife.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Morning</div><div class="timeline-desc"><strong>Schwabacher Landing</strong>, then <strong>Mormon Row Historic District</strong> and the Moulton Barn.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Midday</div><div class="timeline-desc"><strong>Jenny Lake</strong>: shore walk or boat to the Hidden Falls trail, depending on time and parking.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc">Continue north on the John D. Rockefeller Jr. Memorial Parkway to Flagg Ranch.</div></div>
+            </div>
+
+            <div class="highlight-chips">
+              <span class="chip">Oxbow Bend</span><span class="chip">Schwabacher Landing</span><span class="chip">Mormon Row</span><span class="chip">Moulton Barn</span><span class="chip">Jenny Lake</span><span class="chip">Hidden Falls (optional)</span><span class="chip">Rockefeller Parkway</span>
+            </div>
+
+            <div class="trail-note">
+              <span class="trail-note-label">From the trail</span>
+              Oxbow Bend is best at dawn — the light is soft and the river is calm. Schwabacher Landing is just south on US-89. Mormon Row is one of the most-photographed spots in America — the Moulton Barn framed by the Teton range is extraordinary. Sequence these stops south-to-north so the drive to Flagg Ranch flows naturally.
+            </div>
+
+            <div class="info-block">
+              <div class="info-block-label">Stay · confirmed</div>
+              <div class="info-block-body">
+                <strong>Headwaters Campground at Flagg Ranch</strong><br>
+                Grand Teton National Park<br>
+                100 Grassy Lake Rd, Moran, WY 83013<br>
+                Site 317, 300s · water, sewer, 50A electric · check-in 2:00 PM · check-out 11:00 AM.
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block-label">Reservation</div>
+              <div class="reveal-row" data-reveal-group="day2">
+                <span class="reveal-value" data-secret="0805777960-1">•••••••••••••</span>
+                <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+                <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+              </div>
+            </div>
+
+            <div class="alert alert-amber"><span class="alert-icon">📅</span><span><strong>Cancellation:</strong> Full refund if cancelled by August 14. No refund after August 15. Verify the policy directly with the campground.</span></div>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" data-maps-query="100 Grassy Lake Rd, Moran, WY 83013" href="https://www.google.com/maps/search/?api=1&amp;query=100%20Grassy%20Lake%20Rd%2C%20Moran%2C%20WY%2083013" target="_blank" rel="noopener">🗺️ Open in Maps</a>
+              <button class="btn" data-copy-text="100 Grassy Lake Rd, Moran, WY 83013" type="button">⧉ Copy address</button>
+              <button class="btn" data-mark-reviewed type="button">✓ Mark day reviewed</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 3 -->
+        <article class="day-card" id="day3" data-date="2026-08-17">
+          <h3>
+            <button class="day-header" aria-expanded="false" aria-controls="day3-body" id="day3-header">
+              <span class="day-thumb"><img src="assets/images/yellowstone-lake.svg" alt="" loading="lazy"></span>
+              <span class="day-header-text">
+                <span class="day-date">Monday, August 17</span>
+                <span class="day-title">South Yellowstone → Canyon</span>
+                <span class="day-tags"><span class="day-tag">~90 mi</span><span class="day-tag">~3–4h drive</span></span>
+              </span>
+              <span class="day-reviewed-badge">✓ Reviewed</span>
+              <span class="day-chevron" aria-hidden="true">▾</span>
+            </button>
+          </h3>
+          <div class="day-body" id="day3-body" role="region" aria-labelledby="day3-header" hidden>
+            <div class="timeline">
+              <div class="timeline-row"><div class="timeline-time">Morning</div><div class="timeline-desc">Enter through Yellowstone's South Entrance; stop at <strong>Lewis Falls</strong>.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Late AM</div><div class="timeline-desc"><strong>West Thumb Geyser Basin</strong> at the edge of Yellowstone Lake.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Midday</div><div class="timeline-desc">Yellowstone Lake and <strong>Mud Volcano</strong>.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc"><strong>Hayden Valley</strong> for bison and wildlife; continue to Canyon for Artist Point and the Lower Falls overlooks.</div></div>
+            </div>
+
+            <div class="highlight-chips">
+              <span class="chip">South Entrance</span><span class="chip">Lewis Falls</span><span class="chip">West Thumb Geyser Basin</span><span class="chip">Yellowstone Lake</span><span class="chip">Mud Volcano</span><span class="chip">Hayden Valley</span><span class="chip">Artist Point</span><span class="chip">Lower Falls</span><span class="chip">Canyon area</span>
+            </div>
+
+            <div class="trail-note">
+              <span class="trail-note-label">From the trail</span>
+              West Thumb Geyser Basin is directly on your route after the South Entrance — geysers sitting at the lake edge is a genuinely strange and beautiful sight. Don't skip it. Artist Point at Canyon is the signature overlook: the Grand Canyon of the Yellowstone with its vivid orange and yellow canyon walls dropping to the Lower Falls. The rainbow in the mist is visible in morning light.
+            </div>
+
+            <div class="info-block">
+              <div class="info-block-label">Stay · confirmed</div>
+              <div class="info-block-body">
+                <strong>Fishing Bridge RV Park</strong><br>
+                22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190<br>
+                RV only · 30 ft max · check-in after 1:00 PM · check-out 11:00 AM · <a href="tel:+13073447311">(307) 344-7311</a>
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block-label">Reservation (itinerary number)</div>
+              <div class="reveal-row" data-reveal-group="day3">
+                <span class="reveal-value" data-secret="20880487">••••••••</span>
+                <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+                <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+              </div>
+            </div>
+
+            <div class="alert alert-amber"><span class="alert-icon">📅</span><span><strong>Cancellation:</strong> $25 fee after July 18. Deposit forfeited after August 10. Verify in the reservation portal.</span></div>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" data-maps-query="22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" href="https://www.google.com/maps/search/?api=1&amp;query=22%20Fishing%20Bridge%20RV%20Park%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190" target="_blank" rel="noopener">🗺️ Open in Maps</a>
+              <a class="btn" href="tel:+13073447311">📞 Call campground</a>
+              <button class="btn" data-copy-text="22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" type="button">⧉ Copy address</button>
+              <button class="btn" data-mark-reviewed type="button">✓ Mark day reviewed</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 4 -->
+        <article class="day-card" id="day4" data-date="2026-08-18">
+          <h3>
+            <button class="day-header" aria-expanded="false" aria-controls="day4-body" id="day4-header">
+              <span class="day-thumb"><img src="assets/images/lamar-valley.svg" alt="" loading="lazy"></span>
+              <span class="day-header-text">
+                <span class="day-date">Tuesday, August 18</span>
+                <span class="day-title">Northern Yellowstone → West Yellowstone</span>
+                <span class="day-tags"><span class="day-tag">~160 mi</span><span class="day-tag">~5–6h drive</span><span class="day-tag">Big day</span></span>
+              </span>
+              <span class="day-reviewed-badge">✓ Reviewed</span>
+              <span class="day-chevron" aria-hidden="true">▾</span>
+            </button>
+          </h3>
+          <div class="day-body" id="day4-body" role="region" aria-labelledby="day4-header" hidden>
+            <div class="timeline">
+              <div class="timeline-row"><div class="timeline-time">7:00 AM</div><div class="timeline-desc">Leave Fishing Bridge early — this is the big day.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Morning</div><div class="timeline-desc"><strong>Tower Fall</strong>, then <strong>Lamar Valley</strong>. Drive slowly and allow for wildlife traffic.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Midday</div><div class="timeline-desc"><strong>Mammoth Hot Springs</strong>: lower terraces and, if time permits, the upper terrace loop.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc"><strong>Norris Geyser Basin</strong>, <strong>Old Faithful</strong>, and <strong>Grand Prismatic Spring</strong> via the Fairy Falls overlook.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Evening</div><div class="timeline-desc">Optional Firehole Lake Drive, then exit through the West Entrance.</div></div>
+            </div>
+
+            <div class="highlight-chips">
+              <span class="chip">Tower Fall</span><span class="chip">Lamar Valley</span><span class="chip">Mammoth Hot Springs</span><span class="chip">Norris Geyser Basin</span><span class="chip">Porcelain Basin</span><span class="chip">Old Faithful</span><span class="chip">Grand Prismatic Spring</span><span class="chip">Fairy Falls overlook</span><span class="chip">Firehole Lake Drive (optional)</span><span class="chip">West Entrance</span>
+            </div>
+
+            <div class="trail-note">
+              <span class="trail-note-label">From the trail</span>
+              Leave Fishing Bridge by 7 AM — this is the big day. Lamar Valley bison will stop your vehicle; build buffer time. For Grand Prismatic, the Fairy Falls overlook is the classic aerial view — the boardwalk at lake level doesn't show the colors at all. Norris Geyser Basin is often skipped but is the hottest, most active area in the park: the Porcelain Basin loop is 800 meters and unmissable.
+            </div>
+
+            <div class="mini-gallery">
+              <figure>
+                <img src="assets/images/mammoth-hot-springs.svg" alt="Illustration of the white travertine terraces at Mammoth Hot Springs" loading="lazy">
+                <figcaption>Mammoth Hot Springs terraces</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/images/grand-prismatic.svg" alt="Illustration of Grand Prismatic Spring from above, with rings of color and steam" loading="lazy">
+                <figcaption>Grand Prismatic from the Fairy Falls overlook</figcaption>
+              </figure>
+            </div>
+
+            <div class="alert alert-red"><span class="alert-icon">🚨</span><span><strong>This is an aggressive day</strong> that may take 10–12 or more hours with traffic, parking, and wildlife jams. Norris or Firehole Lake Drive should be treated as optional if time becomes tight.</span></div>
+
+            <div class="info-block">
+              <div class="info-block-label">Stay · confirmed</div>
+              <div class="info-block-body">
+                <strong>Yellowstone Park / West Gate KOA Holiday</strong><br>
+                3305 Targhee Pass Highway, 6 miles West on US-20, West Yellowstone, MT 59758<br>
+                Back-in site · 30/20A water/electric · check-in 1:00 PM · check-out 11:00 AM.
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block-label">Reservation</div>
+              <div class="reveal-row" data-reveal-group="day4">
+                <span class="reveal-value" data-secret="22318444">••••••••</span>
+                <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+                <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label">Campground Wi-Fi password</div>
+              <div class="reveal-row" data-reveal-group="day4wifi">
+                <span class="reveal-value" data-secret="westgate23">••••••••••</span>
+                <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+                <button class="copy-btn" data-copy-target type="button" aria-label="Copy Wi-Fi password" hidden>⧉</button>
+              </div>
+            </div>
+
+            <div class="alert alert-amber"><span class="alert-icon">📅</span><span><strong>Cancellation:</strong> Call 800-562-7591 by 4:00 PM August 11. Text and email cancellations are not accepted.</span></div>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" data-maps-query="3305 Targhee Pass Highway, West Yellowstone, MT 59758" href="https://www.google.com/maps/search/?api=1&amp;query=3305%20Targhee%20Pass%20Highway%2C%20West%20Yellowstone%2C%20MT%2059758" target="_blank" rel="noopener">🗺️ Open in Maps</a>
+              <button class="btn" data-copy-text="3305 Targhee Pass Highway, West Yellowstone, MT 59758" type="button">⧉ Copy address</button>
+              <button class="btn" data-mark-reviewed type="button">✓ Mark day reviewed</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 5 -->
+        <article class="day-card" id="day5" data-date="2026-08-19">
+          <h3>
+            <button class="day-header" aria-expanded="false" aria-controls="day5-body" id="day5-header">
+              <span class="day-thumb"><img src="assets/images/artist-point.svg" alt="" loading="lazy"></span>
+              <span class="day-header-text">
+                <span class="day-date">Wednesday, August 19</span>
+                <span class="day-title">West Yellowstone → SLC → Home</span>
+                <span class="day-tags"><span class="day-tag">~243 mi</span><span class="day-tag">~4h drive</span><span class="day-tag">✈️ Flight day</span></span>
+              </span>
+              <span class="day-reviewed-badge">✓ Reviewed</span>
+              <span class="day-chevron" aria-hidden="true">▾</span>
+            </button>
+          </h3>
+          <div class="day-body" id="day5-body" role="region" aria-labelledby="day5-header" hidden>
+            <div class="timeline">
+              <div class="timeline-row"><div class="timeline-time">5:30–6:00 AM</div><div class="timeline-desc">Leave West Gate KOA. Take US-20 to I-15 south through Idaho.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Before 11:00 AM</div><div class="timeline-desc">Return the RV in Millcreek. Refill fuel/propane and complete tank requirements per the rental contract.</div></div>
+              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc">Free time in Salt Lake City, or head to the airport and relax before the evening flight.</div></div>
+              <div class="timeline-row"><div class="timeline-time">8:59 PM</div><div class="timeline-desc">Depart SLC on DL2762; arrive SFO at 9:59 PM.</div></div>
+            </div>
+
+            <div class="highlight-chips">
+              <span class="chip">US-20 to I-15 South</span><span class="chip">RV return, Millcreek</span><span class="chip">Free afternoon in SLC</span>
+            </div>
+
+            <div class="alert alert-red"><span class="alert-icon">🚨</span><span><strong>Tight margin:</strong> the drive from West Yellowstone to Millcreek plus fuel, tank service, cleaning, and traffic leaves limited margin before the 11:00 AM RV return. Confirm whether the return appointment can be adjusted, and prepare the RV the previous night.</span></div>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" data-maps-query="4125 S State St, Millcreek, UT 84107" href="https://www.google.com/maps/search/?api=1&amp;query=4125%20S%20State%20St%2C%20Millcreek%2C%20UT%2084107" target="_blank" rel="noopener">🗺️ Open Cruise America in Maps</a>
+              <button class="btn" data-mark-reviewed type="button">✓ Mark day reviewed</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="section-head" style="margin-top:34px;">
+        <div class="section-kicker">Still to cancel</div>
+        <h2 class="section-title" style="font-size:22px;">Reservations still marked for cancellation</h2>
+      </div>
+      <div class="card" style="border-left:4px solid #c1462f;">
+        <div class="card-meta" style="margin-top:0">
+          <strong>Yellowstone RV Park, Gardiner</strong><br>
+          Confirmation #162327 · Phone: <a href="tel:+14068487496">(406) 848-7496</a><br>
+          Cancel by August 13
+        </div>
+        <label class="check-item left-red" style="margin-top:12px;border-left-color:#c1462f">
+          <input class="check-input" type="checkbox" data-key="cancel-gardiner">
+          <span class="check-text"><span class="check-title">Mark cancelled</span></span>
+        </label>
+        <div class="card-meta" style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
+          <strong>Bear Canyon Campground, Bozeman</strong><br>
+          Confirmation #2026050558 · Phone: <a href="tel:+14065871575">(406) 587-1575</a><br>
+          Cancel by August 17
+        </div>
+        <label class="check-item left-red" style="margin-top:12px;border-left-color:#c1462f">
+          <input class="check-input" type="checkbox" data-key="cancel-bozeman">
+          <span class="check-text"><span class="check-title">Mark cancelled</span></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="section" id="checklist" aria-labelledby="checklistTitle">
+      <div class="section-head">
+        <div class="section-kicker">Trip checklist</div>
+        <h2 class="section-title" id="checklistTitle">Everything before wheels-up</h2>
+        <p class="section-lede">Saved automatically on this device.</p>
+      </div>
+
+      <div class="checklist-controls">
+        <div class="progress-wrap">
+          <div class="progress-text" id="progressText">0 of 0 complete</div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+        </div>
+        <div class="checklist-btns">
+          <button class="btn btn-sm" id="btnExpandAll" type="button">Expand all</button>
+          <button class="btn btn-sm" id="btnCollapseAll" type="button">Collapse all</button>
+          <button class="btn btn-sm" id="btnHideCompleted" type="button" aria-pressed="false">Hide completed</button>
+          <button class="btn btn-sm" id="btnResetChecklist" type="button">Reset checklist</button>
+        </div>
+      </div>
+
+      <div class="checklist-group" data-group="urgent">
+        <h3 class="checklist-group-title"><span class="group-dot red"></span>Urgent</h3>
+        <label class="check-item" style="border-left-color:#c1462f"><input class="check-input" type="checkbox" data-key="cancel-gardiner"><span class="check-text"><span class="check-title">Cancel Yellowstone RV Park, Gardiner</span><span class="check-sub">Confirmation #162327 · (406) 848-7496 · cancel by August 13.</span></span></label>
+        <label class="check-item" style="border-left-color:#c1462f"><input class="check-input" type="checkbox" data-key="cancel-bozeman"><span class="check-text"><span class="check-title">Cancel Bear Canyon Campground, Bozeman</span><span class="check-sub">Confirmation #2026050558 · (406) 587-1575 · cancel by August 17.</span></span></label>
+        <label class="check-item" style="border-left-color:#c1462f"><input class="check-input" type="checkbox" data-key="confirm-return-timing"><span class="check-text"><span class="check-title">Confirm August 19 RV return timing</span><span class="check-sub">Verify the exact deadline and whether an earlier or adjusted return is possible.</span></span></label>
+      </div>
+
+      <div class="checklist-group" data-group="reservations">
+        <h3 class="checklist-group-title"><span class="group-dot amber"></span>Reservations &amp; logistics</h3>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="download-reservations"><span class="check-text"><span class="check-title">Download all reservations</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="save-confirmations-offline"><span class="check-text"><span class="check-title">Save confirmations offline</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-alpine-late-arrival"><span class="check-text"><span class="check-title">Confirm Alpine late-arrival procedure</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-rv-return-rules"><span class="check-text"><span class="check-title">Confirm RV return rules</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-campground-arrival"><span class="check-text"><span class="check-title">Confirm campground arrival policies</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="park-pass"><span class="check-text"><span class="check-title">Buy or pack America the Beautiful pass</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="offline-nps-maps"><span class="check-text"><span class="check-title">Download offline NPS maps</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="offline-google-maps"><span class="check-text"><span class="check-title">Download offline Google Maps areas</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-flight-seats"><span class="check-text"><span class="check-title">Confirm flight seats</span></span></label>
+        <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-airport-transport"><span class="check-text"><span class="check-title">Confirm airport-to-rental transportation</span></span></label>
+      </div>
+
+      <div class="checklist-group" data-group="rv-inspection">
+        <h3 class="checklist-group-title"><span class="group-dot blue"></span>RV inspection</h3>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-exterior-photos"><span class="check-text"><span class="check-title">Exterior damage photos</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-tire-condition"><span class="check-text"><span class="check-title">Tire condition</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-fuel-level"><span class="check-text"><span class="check-title">Fuel level</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-propane-level"><span class="check-text"><span class="check-title">Propane level</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-generator-test"><span class="check-text"><span class="check-title">Generator test</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-fridge-test"><span class="check-text"><span class="check-title">Refrigerator test</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-water-pump-test"><span class="check-text"><span class="check-title">Water pump test</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-outlets-test"><span class="check-text"><span class="check-title">Outlets test</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-gray-tank"><span class="check-text"><span class="check-title">Gray tank instructions</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-black-tank"><span class="check-text"><span class="check-title">Black tank instructions</span></span></label>
+        <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-emergency-number"><span class="check-text"><span class="check-title">Emergency roadside number</span></span></label>
+      </div>
+
+      <div class="checklist-group" data-group="packing">
+        <h3 class="checklist-group-title"><span class="group-dot violet"></span>Packing</h3>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-binoculars"><span class="check-text"><span class="check-title">Binoculars</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-camera"><span class="check-text"><span class="check-title">Camera</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-camera-batteries"><span class="check-text"><span class="check-title">Camera batteries</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-chargers"><span class="check-text"><span class="check-title">Chargers</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-power-banks"><span class="check-text"><span class="check-title">Power banks</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-headlamps"><span class="check-text"><span class="check-title">Headlamps</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-warm-layers"><span class="check-text"><span class="check-title">Warm layers</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-rain-jackets"><span class="check-text"><span class="check-title">Rain jackets</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-hiking-shoes"><span class="check-text"><span class="check-title">Hiking shoes</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-water-bottles"><span class="check-text"><span class="check-title">Refillable water bottles</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-bear-spray"><span class="check-text"><span class="check-title">Bear spray purchased after landing</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-sunscreen"><span class="check-text"><span class="check-title">Sunscreen</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-insect-repellent"><span class="check-text"><span class="check-title">Insect repellent</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-first-aid"><span class="check-text"><span class="check-title">First-aid kit</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-food-storage"><span class="check-text"><span class="check-title">Food storage supplies</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-coffee"><span class="check-text"><span class="check-title">Coffee supplies</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-easy-dinners"><span class="check-text"><span class="check-title">Easy dinners</span></span></label>
+        <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-road-snacks"><span class="check-text"><span class="check-title">Road snacks</span></span></label>
+      </div>
+
+      <div class="checklist-group" data-group="daily-habits">
+        <h3 class="checklist-group-title"><span class="group-dot green"></span>Daily habits</h3>
+        <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-fuel-half"><span class="check-text"><span class="check-title">Fuel above half tank</span></span></label>
+        <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-secure-food"><span class="check-text"><span class="check-title">Secure food and scented items</span></span></label>
+        <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-review-weather"><span class="check-text"><span class="check-title">Review weather</span></span></label>
+        <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-review-closures"><span class="check-text"><span class="check-title">Review road closures</span></span></label>
+        <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-early-start"><span class="check-text"><span class="check-title">Start wildlife days early</span></span></label>
+        <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-quiet-moment"><span class="check-text"><span class="check-title">Take one quiet photo-free moment together</span></span></label>
+      </div>
+    </section>
+
+    <!-- RESERVATIONS -->
+    <section class="section" id="reservations" aria-labelledby="reservationsTitle">
+      <div class="section-head">
+        <div class="section-kicker">Reservations</div>
+        <h2 class="section-title" id="reservationsTitle">Every confirmation in one place</h2>
+        <p class="section-lede">Confirmation numbers are hidden by default. Tap Reveal to view them for this session.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Delta flights</div>
+        <div class="card-title" style="font-size:16px">SFO ⇄ SLC · Aug 15 &amp; Aug 19</div>
+        <div class="reveal-row" data-reveal-group="res-flights" style="margin-top:8px">
+          <span class="reveal-value" data-secret="GIFPVV">••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Cruise America RV</div>
+        <div class="card-title" style="font-size:16px">Ultra Compact RV, Millcreek</div>
+        <div class="reveal-row" data-reveal-group="res-rv" style="margin-top:8px">
+          <span class="reveal-value" data-secret="792536">••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+        <div class="btn-row"><a class="btn btn-sm" href="tel:+18012880930">📞 Call</a><a class="btn btn-sm" data-maps-query="4125 S State St, Millcreek, UT 84107" href="https://www.google.com/maps/search/?api=1&amp;query=4125%20S%20State%20St%2C%20Millcreek%2C%20UT%2084107" target="_blank" rel="noopener">🗺️ Maps</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Alpine Valley RV Resort</div>
+        <div class="card-title" style="font-size:16px">Aug 15–16 · Alpine, WY</div>
+        <div class="reveal-row" data-reveal-group="res-alpine" style="margin-top:8px">
+          <span class="reveal-value" data-secret="R00000003536">••••••••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+        <div class="btn-row"><a class="btn btn-sm" data-maps-query="64 Lunch Counter Lane, Alpine, WY 83128" href="https://www.google.com/maps/search/?api=1&amp;query=64%20Lunch%20Counter%20Lane%2C%20Alpine%2C%20WY%2083128" target="_blank" rel="noopener">🗺️ Maps</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Headwaters Campground at Flagg Ranch</div>
+        <div class="card-title" style="font-size:16px">Aug 16–17 · Grand Teton NP</div>
+        <div class="reveal-row" data-reveal-group="res-headwaters" style="margin-top:8px">
+          <span class="reveal-value" data-secret="0805777960-1">•••••••••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+        <div class="btn-row"><a class="btn btn-sm" data-maps-query="100 Grassy Lake Rd, Moran, WY 83013" href="https://www.google.com/maps/search/?api=1&amp;query=100%20Grassy%20Lake%20Rd%2C%20Moran%2C%20WY%2083013" target="_blank" rel="noopener">🗺️ Maps</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Fishing Bridge RV Park</div>
+        <div class="card-title" style="font-size:16px">Aug 17–18 · Yellowstone NP</div>
+        <div class="reveal-row" data-reveal-group="res-fishingbridge" style="margin-top:8px">
+          <span class="reveal-value" data-secret="20880487">••••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+        <div class="btn-row"><a class="btn btn-sm" href="tel:+13073447311">📞 Call</a><a class="btn btn-sm" data-maps-query="22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" href="https://www.google.com/maps/search/?api=1&amp;query=22%20Fishing%20Bridge%20RV%20Park%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190" target="_blank" rel="noopener">🗺️ Maps</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Yellowstone Park / West Gate KOA Holiday</div>
+        <div class="card-title" style="font-size:16px">Aug 18–19 · West Yellowstone, MT</div>
+        <div class="reveal-row" data-reveal-group="res-koa" style="margin-top:8px">
+          <span class="reveal-value" data-secret="22318444">••••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+        <div class="card-meta">Wi-Fi password is revealed with the reservation above — see Day 4.</div>
+        <div class="btn-row"><a class="btn btn-sm" data-maps-query="3305 Targhee Pass Highway, West Yellowstone, MT 59758" href="https://www.google.com/maps/search/?api=1&amp;query=3305%20Targhee%20Pass%20Highway%2C%20West%20Yellowstone%2C%20MT%2059758" target="_blank" rel="noopener">🗺️ Maps</a></div>
+      </div>
+
+      <div class="card" style="border-left:4px solid #c1462f;">
+        <div class="card-label">Cancellation: Yellowstone RV Park, Gardiner</div>
+        <div class="reveal-row" data-reveal-group="res-gardiner" style="margin-top:8px">
+          <span class="reveal-value" data-secret="162327">••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+        <div class="btn-row"><a class="btn btn-sm" href="tel:+14068487496">📞 Call to cancel</a></div>
+      </div>
+
+      <div class="card" style="border-left:4px solid #c1462f;">
+        <div class="card-label">Cancellation: Bear Canyon Campground, Bozeman</div>
+        <div class="reveal-row" data-reveal-group="res-bozeman" style="margin-top:8px">
+          <span class="reveal-value" data-secret="2026050558">••••••••••</span>
+          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        </div>
+        <div class="btn-row"><a class="btn btn-sm" href="tel:+14065871575">📞 Call to cancel</a></div>
+      </div>
+
+      <h3 class="card-title" style="margin-top:26px;font-size:16px;">Official references</h3>
+      <p class="section-lede">These open live pages and need a connection.</p>
+      <div class="ref-grid">
+        <a class="ref-item" href="https://www.nps.gov/yell/index.htm" target="_blank" rel="noopener"><div class="ref-name">Yellowstone National Park ↗</div><div class="ref-detail">Alerts, roads, hours, geyser predictions, safety.</div></a>
+        <a class="ref-item" href="https://www.nps.gov/grte/index.htm" target="_blank" rel="noopener"><div class="ref-name">Grand Teton National Park ↗</div><div class="ref-detail">Conditions, maps, trails, visitor info.</div></a>
+        <a class="ref-item" href="https://www.cruiseamerica.com/" target="_blank" rel="noopener"><div class="ref-name">Cruise America ↗</div><div class="ref-detail">Rental management and vehicle information.</div></a>
+        <a class="ref-item" href="https://www.yellowstonenationalparklodges.com/lodgings/camping/fishing-bridge-rv-park/" target="_blank" rel="noopener"><div class="ref-name">Fishing Bridge RV Park ↗</div><div class="ref-detail">Official operator information and policies.</div></a>
+        <a class="ref-item" href="https://www.gtlc.com/camping/headwaters-campground-at-flagg-ranch" target="_blank" rel="noopener"><div class="ref-name">Headwaters at Flagg Ranch ↗</div><div class="ref-detail">Campground info between Teton and Yellowstone.</div></a>
+        <a class="ref-item" href="https://koa.com/campgrounds/yellowstone-park/" target="_blank" rel="noopener"><div class="ref-name">West Gate KOA ↗</div><div class="ref-detail">Reservation and campground details.</div></a>
+      </div>
+    </section>
+
+    <div class="privacy-note">
+      <strong>Privacy note:</strong> this app is hosted on GitHub Pages, which is public unless the repository and hosting are configured privately. Confirmation numbers and the Wi-Fi password are hidden by default and only revealed on-device for the current browser session — they are never printed in page text, headings, or link previews. Avoid sharing this URL publicly if you'd rather keep trip details private.
+    </div>
+
+    <footer class="site-footer">
+      <p class="tagline">Adventure is better together.</p>
+      <p class="fine-print">Checklist progress, reveal state, and reviewed days are stored only in this browser using localStorage / sessionStorage — nothing is sent to a server. Built as a personal, offline-friendly progressive web app.</p>
+    </footer>
+  </div>
+</main>
+
+<nav class="bottom-nav" aria-label="Primary">
+  <ul>
+    <li><a href="#home" data-nav="home"><span class="nav-icon">🏕️</span>Home</a></li>
+    <li><a href="#route" data-nav="route"><span class="nav-icon">🗺️</span>Route</a></li>
+    <li><a href="#days" data-nav="days"><span class="nav-icon">📅</span>Days</a></li>
+    <li><a href="#checklist" data-nav="checklist"><span class="nav-icon">✅</span>Checklist</a></li>
+    <li><a href="#reservations" data-nav="reservations"><span class="nav-icon">🎫</span>Reservations</a></li>
+  </ul>
+</nav>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

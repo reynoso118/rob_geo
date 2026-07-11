@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="artistTitle">
+<title id="artistTitle">Illustration of the Grand Canyon of the Yellowstone from Artist Point, with orange canyon walls and the Lower Falls</title>
+<defs>
+  <linearGradient id="asky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#2d5240"/>
+    <stop offset="100%" stop-color="#e8c86a"/>
+  </linearGradient>
+  <linearGradient id="canyon" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#c8922a"/>
+    <stop offset="50%" stop-color="#b8521f"/>
+    <stop offset="100%" stop-color="#7a3714"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#asky)"/>
+<polygon points="0,300 260,260 520,310 780,255 1040,300 1200,270 1200,800 0,800" fill="url(#canyon)"/>
+<polygon points="0,340 260,300 520,350 780,300 1040,345 1200,320 1200,800 0,800" fill="#9c4419" opacity="0.6"/>
+<polygon points="480,120 560,120 610,800 430,800" fill="#f4ecdc" opacity="0.92"/>
+<polygon points="490,130 550,130 585,800 455,800" fill="#faf6ee"/>
+<g fill="#2d5240" opacity="0.55">
+  <polygon points="0,300 40,270 90,300 60,320 0,320"/>
+  <polygon points="1100,270 1140,240 1200,270 1180,300 1100,300"/>
+</g>
+</svg>
