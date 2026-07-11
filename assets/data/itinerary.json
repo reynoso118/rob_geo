@@ -20,13 +20,14 @@
     "plannedTotalMiles": 843,
     "plannedTotalDriveTime": "about 21 hours across 5 days",
     "note": "The master map shows the point-to-point navigation route (769 mi / 13h 23m). Day-by-day planned mileage below totals about 843 miles because it also includes driving inside the parks between stops.",
+    "fullRouteMapUrl": "https://maps.app.goo.gl/ou1oV8q8UMfVM1W1A",
     "stops": [
       { "name": "Salt Lake City International Airport", "address": "776 N Terminal Dr, Salt Lake City, UT 84122", "query": "Salt Lake City International Airport" },
-      { "name": "Cruise America, Millcreek", "address": "4125 S State St, Millcreek, UT 84107", "query": "4125 S State St, Millcreek, UT 84107" },
-      { "name": "Alpine Valley RV Resort", "address": "64 Lunch Counter Lane, Alpine, WY 83128", "query": "64 Lunch Counter Lane, Alpine, WY 83128" },
-      { "name": "Headwaters Campground at Flagg Ranch", "address": "100 Grassy Lake Rd, Moran, WY 83013", "query": "100 Grassy Lake Rd, Moran, WY 83013" },
-      { "name": "Fishing Bridge RV Park", "address": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190", "query": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" },
-      { "name": "Yellowstone Park / West Gate KOA Holiday", "address": "3305 Targhee Pass Highway, 6 miles West on US-20, West Yellowstone, MT 59758", "query": "3305 Targhee Pass Highway, West Yellowstone, MT 59758" },
+      { "name": "Cruise America, Millcreek", "address": "4125 S State St, Millcreek, UT 84107", "query": "4125 S State St, Millcreek, UT 84107", "website": "https://www.cruiseamerica.com/rv-rental-locations/utah/salt-lake-city" },
+      { "name": "Alpine Valley RV Resort", "address": "64 Lunch Counter Lane, Alpine, WY 83128", "query": "64 Lunch Counter Lane, Alpine, WY 83128", "website": "https://alpinevalleyresortwy.com/" },
+      { "name": "Headwaters Campground at Flagg Ranch", "address": "100 Grassy Lake Rd, Moran, WY 83013", "query": "100 Grassy Lake Rd, Moran, WY 83013", "website": "https://www.recreation.gov/camping/campgrounds/258832" },
+      { "name": "Fishing Bridge RV Park", "address": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190", "query": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190", "website": "https://www.yellowstonenationalparklodges.com/lodgings/campground/fishing-bridge-rv-park/" },
+      { "name": "Yellowstone Park / West Gate KOA Holiday", "address": "3305 Targhee Pass Highway, 6 miles West on US-20, West Yellowstone, MT 59758", "query": "3305 Targhee Pass Highway, West Yellowstone, MT 59758", "website": "https://koa.com/campgrounds/yellowstone-park/site-type/rv-camping-sites/" },
       { "name": "Salt Lake City International Airport", "address": "776 N Terminal Dr, Salt Lake City, UT 84122", "query": "Salt Lake City International Airport" }
     ]
   },
@@ -56,6 +57,7 @@
   },
   "rv": {
     "company": "Cruise America",
+    "website": "https://www.cruiseamerica.com/rv-rental-locations/utah/salt-lake-city",
     "confirmation": "792536",
     "vehicle": "Ultra Compact RV",
     "passengers": 2,
@@ -110,7 +112,8 @@
         "name": "Alpine Valley RV Resort",
         "address": "64 Lunch Counter Lane, Alpine, WY 83128",
         "details": "Pull-through site · check-in after 2:00 PM · check-out 10:00 AM · no generators.",
-        "phone": ""
+        "phone": "",
+        "website": "https://alpinevalleyresortwy.com/"
       },
       "reservation": { "label": "Confirmation", "number": "R00000003536" },
       "cancellation": "",
@@ -137,7 +140,8 @@
         "name": "Headwaters Campground at Flagg Ranch",
         "address": "100 Grassy Lake Rd, Moran, WY 83013",
         "details": "Grand Teton National Park · Site 317, 300s · water, sewer, 50A electric · check-in 2:00 PM · check-out 11:00 AM.",
-        "phone": ""
+        "phone": "",
+        "website": "https://www.recreation.gov/camping/campgrounds/258832"
       },
       "reservation": { "label": "Reservation", "number": "0805777960-1" },
       "cancellation": "Full refund if cancelled by August 14. No refund after August 15. Verify the policy directly with the campground.",
@@ -165,7 +169,8 @@
         "address": "22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190",
         "details": "RV only · 30 ft max · check-in after 1:00 PM · check-out 11:00 AM.",
         "phone": "+13073447311",
-        "phoneDisplay": "(307) 344-7311"
+        "phoneDisplay": "(307) 344-7311",
+        "website": "https://www.yellowstonenationalparklodges.com/lodgings/campground/fishing-bridge-rv-park/"
       },
       "reservation": { "label": "Itinerary", "number": "20880487" },
       "cancellation": "$25 fee after July 18. Deposit forfeited after August 10. Verify in the reservation portal.",
@@ -194,7 +199,8 @@
         "address": "3305 Targhee Pass Highway, 6 miles West on US-20, West Yellowstone, MT 59758",
         "details": "Back-in site · 30/20A water/electric · check-in 1:00 PM · check-out 11:00 AM · Wi-Fi password revealed in Reservations.",
         "phone": "",
-        "wifiPassword": "westgate23"
+        "wifiPassword": "westgate23",
+        "website": "https://koa.com/campgrounds/yellowstone-park/site-type/rv-camping-sites/"
       },
       "reservation": { "label": "Reservation", "number": "22318444" },
       "cancellation": "Call 800-562-7591 by 4:00 PM August 11. Text and email cancellations are not accepted.",

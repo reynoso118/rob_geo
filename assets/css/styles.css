@@ -318,6 +318,7 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--pine); font-weight: 700
 .info-block { margin-top: 16px; }
 .info-block-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
 .info-block-body { font-size: 13.5px; color: #454139; line-height: 1.7; }
+.info-block-body a { color: var(--pine); text-decoration-color: var(--gold); text-underline-offset: 2px; }
 .trail-note {
   margin-top: 16px; background: var(--cream); border-radius: var(--radius-sm); padding: 14px 16px;
   font-family: var(--serif); font-style: italic; font-size: 14px; color: #3a3322; line-height: 1.7;
@@ -325,13 +326,24 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--pine); font-weight: 700
 }
 .trail-note-label { font-family: var(--sans); font-style: normal; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--rust); margin-bottom: 6px; display: block; }
 
+/* Inline links to a Google search of a named stop, used in timelines and trail notes */
+.loc-link {
+  color: inherit; text-decoration: underline; text-decoration-color: var(--gold);
+  text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+}
+.loc-link:hover, .loc-link:focus-visible { color: var(--rust); text-decoration-color: var(--rust); }
+
 .mini-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
 .mini-gallery figure { margin: 0; border-radius: var(--radius-sm); overflow: hidden; background: var(--pine); }
 .mini-gallery img { width: 100%; height: 100px; object-fit: cover; display: block; }
 .mini-gallery figcaption { font-size: 11px; color: var(--muted); padding: 5px 2px 0; }
 
 .highlight-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.chip { font-size: 12px; font-weight: 700; background: #eef4ea; color: var(--pine); padding: 5px 10px; border-radius: 999px; }
+.chip {
+  font-size: 12px; font-weight: 700; background: #eef4ea; color: var(--pine); padding: 5px 10px;
+  border-radius: 999px; text-decoration: none; display: inline-block; transition: background .15s ease, color .15s ease;
+}
+a.chip:hover, a.chip:focus-visible { background: var(--pine); color: #fff; }
 
 .alert { margin-top: 14px; border-radius: 10px; padding: 12px 14px; font-size: 13px; line-height: 1.6; display: flex; gap: 10px; }
 .alert-icon { flex-shrink: 0; font-size: 15px; line-height: 1.3; }
