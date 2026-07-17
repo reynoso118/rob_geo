@@ -287,8 +287,8 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--pine); font-weight: 700
 /* -------------------- Day accordion -------------------- */
 .day-list { display: flex; flex-direction: column; gap: 12px; }
 .day-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
-.day-header {
-  width: 100%; display: flex; align-items: center; gap: 14px; text-align: left;
+.day-header, .rv-walkthrough-header {
+  width: 100%; display: flex; align-items: center; gap: 14px; text-align: left; font-family: inherit;
   background: none; border: none; cursor: pointer; padding: 16px 18px;
 }
 .day-thumb { width: 52px; height: 52px; border-radius: 12px; overflow: hidden; flex-shrink: 0; background: var(--pine); }
@@ -299,7 +299,7 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--pine); font-weight: 700
 .day-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
 .day-tag { font-size: 10.5px; font-weight: 700; background: var(--cream); color: var(--pine); padding: 3px 9px; border-radius: 999px; }
 .day-chevron { flex-shrink: 0; font-size: 14px; color: var(--muted); transition: transform 0.2s ease; }
-.day-header[aria-expanded="true"] .day-chevron { transform: rotate(180deg); }
+[aria-expanded="true"] .day-chevron { transform: rotate(180deg); }
 .day-reviewed-badge {
   font-size: 10px; font-weight: 800; color: #2e6b33; background: #e5f2e2; padding: 3px 8px;
   border-radius: 999px; display: none; align-items: center; gap: 4px; white-space: nowrap;
@@ -357,8 +357,17 @@ a.chip:hover, a.chip:focus-visible { background: var(--pine); color: #fff; }
 .progress-fill { height: 100%; background: linear-gradient(90deg, var(--pine-mid), var(--gold)); border-radius: 999px; transition: width .3s ease; }
 .checklist-btns { display: flex; gap: 6px; flex-wrap: wrap; }
 
-.checklist-group { margin-bottom: 22px; }
-.checklist-group-title { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 800; color: var(--pine); margin-bottom: 10px; }
+.checklist-group { margin-bottom: 12px; }
+.checklist-group-header {
+  width: 100%; display: flex; align-items: center; gap: 10px; text-align: left; font-family: inherit;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-md);
+  padding: 13px 16px; cursor: pointer; transition: border-color .15s ease;
+}
+.checklist-group-header:hover { border-color: var(--pine-mid); }
+.checklist-group-title-text { font-size: 13.5px; font-weight: 800; color: var(--pine); flex: 1; }
+.group-count { font-size: 11.5px; font-weight: 700; color: var(--muted); background: var(--cream); padding: 3px 9px; border-radius: 999px; flex-shrink: 0; }
+.checklist-group-body { padding-top: 10px; }
+.checklist-group-body[hidden] { display: none; }
 .group-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 .group-dot.red { background: #c1462f; }
 .group-dot.amber { background: #d9a441; }
@@ -377,6 +386,15 @@ a.chip:hover, a.chip:focus-visible { background: var(--pine); color: #fff; }
 .check-text { flex: 1; }
 .check-title { font-size: 14px; font-weight: 700; }
 .check-sub { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.6; }
+
+/* -------------------- Reservation card accordion -------------------- */
+.res-header {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: none; border: none; padding: 0; margin: 0; cursor: pointer; text-align: left; font-family: inherit;
+}
+.res-header-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.res-body { margin-top: 0; }
+.res-body[hidden] { display: none; }
 
 /* -------------------- Reservation grid + confirmation grid -------------------- */
 .conf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }

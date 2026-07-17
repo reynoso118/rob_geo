@@ -108,7 +108,7 @@
       </div>
       <p class="section-lede">The point-to-point figures come straight off the master map above. The ~843-mile planned total also folds in the driving done inside the parks between stops each day — that's the number that matters against the RV's 1,300-mile allowance.</p>
 
-      <h3 class="card-title mt-0" style="margin-top:22px;font-size:16px;">Ordered stops</h3>
+      <h3 class="card-title mt-0" style="margin-top:22px;font-size:16px;">Trip waypoints</h3>
       <ol class="stop-list" id="stopList">
         <!-- Stops populated by app.js from data below; noscript fallback follows -->
         <li class="stop-row"><span class="stop-index">1</span><div class="stop-info"><div class="stop-name">Salt Lake City International Airport</div><div class="stop-addr">776 N Terminal Dr, Salt Lake City, UT 84122</div></div><a class="stop-map-btn" data-maps-query="Salt Lake City International Airport" href="https://www.google.com/maps/search/?api=1&amp;query=Salt%20Lake%20City%20International%20Airport" target="_blank" rel="noopener">Maps ↗</a></li>
@@ -215,9 +215,19 @@
         <div class="alert alert-green"><span class="alert-icon">🛣️</span><span><strong>Mileage buffer:</strong> about 457 miles of slack beyond the planned route.</span></div>
       </div>
 
-      <h3 class="card-title" style="margin-top:22px;font-size:16px;">Pickup &amp; return walkthrough</h3>
-      <div class="checklist-group" style="margin-top:10px">
-        <div id="rvChecklist"></div>
+      <div class="day-card" id="rvWalkthrough" style="margin-top:22px;">
+        <h3>
+          <button class="rv-walkthrough-header" data-accordion-key="rv-walkthrough" aria-expanded="false" aria-controls="rvWalkthrough-body" id="rvWalkthrough-header">
+            <span class="day-header-text">
+              <span class="day-title">Pickup &amp; return walkthrough</span>
+              <span class="day-tags"><span class="day-tag">11 checks</span></span>
+            </span>
+            <span class="day-chevron" aria-hidden="true">▾</span>
+          </button>
+        </h3>
+        <div class="day-body" id="rvWalkthrough-body" role="region" aria-labelledby="rvWalkthrough-header" hidden>
+          <div id="rvChecklist" style="margin-top:14px"></div>
+        </div>
       </div>
     </section>
 
@@ -227,6 +237,10 @@
         <div class="section-kicker">Day by day</div>
         <h2 class="section-title" id="daysTitle">Five days, one loop</h2>
         <p class="section-lede">Tap a day to expand it. Each day remembers whether you've reviewed it.</p>
+        <div class="checklist-btns" style="margin-top:10px">
+          <button class="btn btn-sm" id="btnDaysExpandAll" type="button">Expand all</button>
+          <button class="btn btn-sm" id="btnDaysCollapseAll" type="button">Collapse all</button>
+        </div>
       </div>
 
       <div class="day-list" id="dayList">
@@ -302,20 +316,29 @@
             </button>
           </h3>
           <div class="day-body" id="day2-body" role="region" aria-labelledby="day2-header" hidden>
+            <p class="section-lede" style="margin-top:2px">Planned as one south-to-north sweep through the park — no backtracking — so you roll into camp relaxed instead of rushed. Times are estimates; wildlife and parking will shift them.</p>
             <div class="timeline">
-              <div class="timeline-row"><div class="timeline-time">Early AM</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Oxbow%20Bend%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Oxbow Bend</strong></a> for calm water, mountain reflections, and possible wildlife.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Morning</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Schwabacher%20Landing%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Schwabacher Landing</strong></a>, then <a class="loc-link" href="https://www.google.com/search?q=Mormon%20Row%20Historic%20District%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Mormon Row Historic District</strong></a> and the <a class="loc-link" href="https://www.google.com/search?q=Moulton%20Barn%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Moulton Barn</a>.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Midday</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Jenny%20Lake%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Jenny Lake</strong></a>: shore walk or boat to the <a class="loc-link" href="https://www.google.com/search?q=Hidden%20Falls%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Hidden Falls</a> trail, depending on time and parking.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc">Continue north on the <a class="loc-link" href="https://www.google.com/search?q=John%20D.%20Rockefeller%20Jr.%20Memorial%20Parkway" target="_blank" rel="noopener">John D. Rockefeller Jr. Memorial Parkway</a> to Flagg Ranch.</div></div>
+              <div class="timeline-row"><div class="timeline-time">6:00 AM</div><div class="timeline-desc">Break camp at Alpine Valley RV Resort and depart — well ahead of the 10:00 AM checkout deadline, to get the best light and parking all day.</div></div>
+              <div class="timeline-row"><div class="timeline-time">6:00–6:45 AM</div><div class="timeline-desc">🚗 Drive Alpine → Jackson → Moose entrance (~46 mi, ~45 min via WY-22 and US-191).</div></div>
+              <div class="timeline-row"><div class="timeline-time">6:45–7:30 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Mormon%20Row%20Historic%20District%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Mormon Row Historic District</strong></a> &amp; the <a class="loc-link" href="https://www.google.com/search?q=Moulton%20Barn%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Moulton Barn</a> — flat, short walk from the gravel pullout (a few hundred yards); the lot easily fits the RV. Morning side-light on the barn is the classic shot — one of the most-photographed barns in America.</div></div>
+              <div class="timeline-row"><div class="timeline-time">7:30–7:45 AM</div><div class="timeline-desc">🚗 Drive to Schwabacher Landing (~5 mi, ~15 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">7:45–8:30 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Schwabacher%20Landing%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Schwabacher Landing</strong></a> — flat 0.5-mi trail/boardwalk along beaver ponds, 30–45 min round trip. Small gravel lot; arrive before 8 AM for an RV-length space. Best mirror reflections come before the morning wind picks up.</div></div>
+              <div class="timeline-row"><div class="timeline-time">8:30–8:45 AM</div><div class="timeline-desc">🚗 Drive to Jenny Lake (~8 mi, ~15 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">8:45–10:15 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Jenny%20Lake%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Jenny Lake</strong></a> — shoreline walk from the large South Jenny Lake lot (RV-friendly, but fills by mid-morning in August). <em>Optional:</em> the shuttle boat plus 1-mi round-trip hike to <a class="loc-link" href="https://www.google.com/search?q=Hidden%20Falls%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Hidden Falls</a> adds about 1.5 hours — worth it if you're on pace, skip it if you're not.</div></div>
+              <div class="timeline-row"><div class="timeline-time">10:15–10:45 AM</div><div class="timeline-desc">🚗 Drive north to Oxbow Bend (~18 mi, ~25 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">10:45–11:15 AM</div><div class="timeline-desc">📸 <a class="loc-link" href="https://www.google.com/search?q=Oxbow%20Bend%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener"><strong>Oxbow Bend</strong></a> — roadside pullout, no hike required. Midday still delivers big Mount Moran views and a real shot at moose or otters, though the glassy dawn reflection is the classic postcard version (see note below).</div></div>
+              <div class="timeline-row"><div class="timeline-time">11:15–11:45 AM</div><div class="timeline-desc">🚗 Drive to Jackson Lake Junction; lunch break (~30 min, services available).</div></div>
+              <div class="timeline-row"><div class="timeline-time">11:45 AM–12:15 PM</div><div class="timeline-desc">🚗 Continue north on the <a class="loc-link" href="https://www.google.com/search?q=John%20D.%20Rockefeller%20Jr.%20Memorial%20Parkway" target="_blank" rel="noopener">John D. Rockefeller Jr. Memorial Parkway</a> to Flagg Ranch (~20 mi, ~25 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">~12:15–1:00 PM</div><div class="timeline-desc">Arrive Headwaters Campground at Flagg Ranch — well ahead of the 2:00 PM check-in, with time to relax before setting up.</div></div>
             </div>
 
             <div class="highlight-chips">
-              <a class="chip" href="https://www.google.com/search?q=Oxbow%20Bend%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Oxbow Bend</a><a class="chip" href="https://www.google.com/search?q=Schwabacher%20Landing%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Schwabacher Landing</a><a class="chip" href="https://www.google.com/search?q=Mormon%20Row%20Historic%20District%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Mormon Row</a><a class="chip" href="https://www.google.com/search?q=Moulton%20Barn%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Moulton Barn</a><a class="chip" href="https://www.google.com/search?q=Jenny%20Lake%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Jenny Lake</a><a class="chip" href="https://www.google.com/search?q=Hidden%20Falls%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Hidden Falls (optional)</a><a class="chip" href="https://www.google.com/search?q=John%20D.%20Rockefeller%20Jr.%20Memorial%20Parkway" target="_blank" rel="noopener">Rockefeller Parkway</a>
+              <a class="chip" href="https://www.google.com/search?q=Mormon%20Row%20Historic%20District%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Mormon Row</a><a class="chip" href="https://www.google.com/search?q=Moulton%20Barn%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Moulton Barn</a><a class="chip" href="https://www.google.com/search?q=Schwabacher%20Landing%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Schwabacher Landing</a><a class="chip" href="https://www.google.com/search?q=Jenny%20Lake%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Jenny Lake</a><a class="chip" href="https://www.google.com/search?q=Hidden%20Falls%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Hidden Falls (optional)</a><a class="chip" href="https://www.google.com/search?q=Oxbow%20Bend%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Oxbow Bend</a><a class="chip" href="https://www.google.com/search?q=John%20D.%20Rockefeller%20Jr.%20Memorial%20Parkway" target="_blank" rel="noopener">Rockefeller Parkway</a>
             </div>
 
             <div class="trail-note">
               <span class="trail-note-label">From the trail</span>
-              <a class="loc-link" href="https://www.google.com/search?q=Oxbow%20Bend%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Oxbow Bend</a> is best at dawn — the light is soft and the river is calm. <a class="loc-link" href="https://www.google.com/search?q=Schwabacher%20Landing%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Schwabacher Landing</a> is just south on US-89. <a class="loc-link" href="https://www.google.com/search?q=Mormon%20Row%20Historic%20District%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Mormon Row</a> is one of the most-photographed spots in America — the <a class="loc-link" href="https://www.google.com/search?q=Moulton%20Barn%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Moulton Barn</a> framed by the Teton range is extraordinary. Sequence these stops south-to-north so the drive to Flagg Ranch flows naturally.
+              This route runs south-to-north in one pass so you're never backtracking. <a class="loc-link" href="https://www.google.com/search?q=Mormon%20Row%20Historic%20District%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Mormon Row</a> is one of the most-photographed spots in America — the <a class="loc-link" href="https://www.google.com/search?q=Moulton%20Barn%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Moulton Barn</a> framed by the Teton range is extraordinary, and morning side-light works in its favor. <a class="loc-link" href="https://www.google.com/search?q=Oxbow%20Bend%2C%20Grand%20Teton%20National%20Park" target="_blank" rel="noopener">Oxbow Bend</a>'s legendary glass-calm reflection happens at dawn, before wind ripples the water — since it sits at the north end of today's route, hitting it at true dawn means leaving Alpine around 4:15 AM and working the other stops afterward instead of before. That's a genuinely good option for dedicated photographers (it adds about an hour of extra driving with no backtrack penalty); this schedule instead treats Oxbow Bend as a strong midday stop so the whole day stays relaxed.
             </div>
 
             <div class="info-block">
@@ -363,11 +386,22 @@
             </button>
           </h3>
           <div class="day-body" id="day3-body" role="region" aria-labelledby="day3-header" hidden>
+            <p class="section-lede" style="margin-top:2px">You'll pass right by tonight's campsite on the way up to Canyon, then backtrack about 20 minutes to actually camp — that detour is unavoidable since Canyon is the day's turnaround point. Times are estimates.</p>
             <div class="timeline">
-              <div class="timeline-row"><div class="timeline-time">Morning</div><div class="timeline-desc">Enter through Yellowstone's <a class="loc-link" href="https://www.google.com/search?q=South%20Entrance%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">South Entrance</a>; stop at <a class="loc-link" href="https://www.google.com/search?q=Lewis%20Falls%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Lewis Falls</strong></a>.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Late AM</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=West%20Thumb%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>West Thumb Geyser Basin</strong></a> at the edge of Yellowstone Lake.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Midday</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Yellowstone%20Lake" target="_blank" rel="noopener">Yellowstone Lake</a> and <a class="loc-link" href="https://www.google.com/search?q=Mud%20Volcano%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Mud Volcano</strong></a>.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Hayden%20Valley%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Hayden Valley</strong></a> for bison and wildlife; continue to Canyon for <a class="loc-link" href="https://www.google.com/search?q=Artist%20Point%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Artist Point</a> and the <a class="loc-link" href="https://www.google.com/search?q=Lower%20Falls%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Lower Falls</a> overlooks.</div></div>
+              <div class="timeline-row"><div class="timeline-time">7:00 AM</div><div class="timeline-desc">Break camp at Headwaters/Flagg Ranch and depart — well ahead of the 11:00 AM checkout deadline.</div></div>
+              <div class="timeline-row"><div class="timeline-time">7:00–7:35 AM</div><div class="timeline-desc">🚗 Drive to Yellowstone's <a class="loc-link" href="https://www.google.com/search?q=South%20Entrance%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">South Entrance</a> (~2 mi) and on to Lewis Falls (~14 mi total, ~30 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">7:35–7:50 AM</div><div class="timeline-desc">📸 <a class="loc-link" href="https://www.google.com/search?q=Lewis%20Falls%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Lewis Falls</strong></a> — roadside overlook right off the highway, no hike. Small pullout with only a handful of spaces; easy in and out for the RV if you don't dawdle.</div></div>
+              <div class="timeline-row"><div class="timeline-time">7:50–8:15 AM</div><div class="timeline-desc">🚗 Drive to West Thumb Geyser Basin (~13 mi, ~20 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">8:15–9:00 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=West%20Thumb%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>West Thumb Geyser Basin</strong></a> — flat boardwalk loop, ~0.5 mi / 30–45 min. Large paved lot handles the RV comfortably. Geysers steaming right at the lake's edge; morning sun backlights the steam nicely.</div></div>
+              <div class="timeline-row"><div class="timeline-time">9:00–9:30 AM</div><div class="timeline-desc">🚗 Drive along the lakeshore toward Fishing Bridge/Lake Village (~21 mi, ~30 min) — you'll pass tonight's campsite on the way.</div></div>
+              <div class="timeline-row"><div class="timeline-time">9:30–10:00 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Yellowstone%20Lake" target="_blank" rel="noopener">Lake Village / Bridge Bay</a> — short stroll along the marina, good coffee/restroom break; large lot, no RV issues.</div></div>
+              <div class="timeline-row"><div class="timeline-time">10:00–10:10 AM</div><div class="timeline-desc">🚗 Drive to Mud Volcano (~6 mi, ~10 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">10:10–10:40 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Mud%20Volcano%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Mud Volcano</strong></a> &amp; Dragon's Mouth Spring — flat boardwalk loop, ~0.6 mi / 20–30 min. Moderate-size lot, fine for the RV.</div></div>
+              <div class="timeline-row"><div class="timeline-time">10:40–11:10 AM</div><div class="timeline-desc">🚗🦬 Drive north through <a class="loc-link" href="https://www.google.com/search?q=Hayden%20Valley%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Hayden Valley</strong></a> (~8 mi) — budget at least 30 min; this is prime bison territory and the wildlife jams are part of the experience. Pull fully off the pavement at marked pullouts only.</div></div>
+              <div class="timeline-row"><div class="timeline-time">11:10–11:30 AM</div><div class="timeline-desc">🚗 Drive to Canyon Village / Artist Point (~10 mi, ~20 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">11:30 AM–1:00 PM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Artist%20Point%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Artist Point</strong></a> &amp; the <a class="loc-link" href="https://www.google.com/search?q=Lower%20Falls%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Lower Falls</a> overlooks, lunch at Canyon Village — short paved walk from a large lot (RV-friendly, though it fills by midday). This is the signature shot of the Grand Canyon of the Yellowstone; late-morning light still shows the orange and yellow walls well.</div></div>
+              <div class="timeline-row"><div class="timeline-time">1:00–1:40 PM</div><div class="timeline-desc">🚗 Drive back south through Hayden Valley and Mud Volcano to Fishing Bridge (~24 mi, ~35–40 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">~1:40 PM</div><div class="timeline-desc">Arrive Fishing Bridge RV Park, check in, and set up camp.</div></div>
             </div>
 
             <div class="highlight-chips">
@@ -376,7 +410,7 @@
 
             <div class="trail-note">
               <span class="trail-note-label">From the trail</span>
-              <a class="loc-link" href="https://www.google.com/search?q=West%20Thumb%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">West Thumb Geyser Basin</a> is directly on your route after the <a class="loc-link" href="https://www.google.com/search?q=South%20Entrance%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">South Entrance</a> — geysers sitting at the lake edge is a genuinely strange and beautiful sight. Don't skip it. <a class="loc-link" href="https://www.google.com/search?q=Artist%20Point%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Artist Point</a> at Canyon is the signature overlook: the Grand Canyon of the Yellowstone with its vivid orange and yellow canyon walls dropping to the <a class="loc-link" href="https://www.google.com/search?q=Lower%20Falls%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Lower Falls</a>. The rainbow in the mist is visible in morning light.
+              <a class="loc-link" href="https://www.google.com/search?q=West%20Thumb%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">West Thumb Geyser Basin</a> is directly on your route after the <a class="loc-link" href="https://www.google.com/search?q=South%20Entrance%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">South Entrance</a> — geysers sitting at the lake edge is a genuinely strange and beautiful sight. Don't skip it. <a class="loc-link" href="https://www.google.com/search?q=Artist%20Point%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Artist Point</a> at Canyon is the signature overlook: the Grand Canyon of the Yellowstone with its vivid orange and yellow canyon walls dropping to the <a class="loc-link" href="https://www.google.com/search?q=Lower%20Falls%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Lower Falls</a>. The rainbow in the mist is visible in morning light. Every stop today is a boardwalk or short paved walk — no real hiking — so it's an easy day on your legs even though it's a full one on the clock.
             </div>
 
             <div class="info-block">
@@ -424,12 +458,24 @@
             </button>
           </h3>
           <div class="day-body" id="day4-body" role="region" aria-labelledby="day4-header" hidden>
+            <p class="section-lede" style="margin-top:2px">This is the big one — nearly the whole Grand Loop Road in a single day. The plan below totals about 8.5–9 hours if it goes smoothly; treat that as the target, not a guarantee (see the warning below).</p>
             <div class="timeline">
-              <div class="timeline-row"><div class="timeline-time">7:00 AM</div><div class="timeline-desc">Leave Fishing Bridge early — this is the big day.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Morning</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Tower%20Fall%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Tower Fall</strong></a>, then <a class="loc-link" href="https://www.google.com/search?q=Lamar%20Valley%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Lamar Valley</strong></a>. Drive slowly and allow for wildlife traffic.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Midday</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Mammoth%20Hot%20Springs%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Mammoth Hot Springs</strong></a>: lower terraces and, if time permits, the upper terrace loop.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Afternoon</div><div class="timeline-desc"><a class="loc-link" href="https://www.google.com/search?q=Norris%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Norris Geyser Basin</strong></a>, <a class="loc-link" href="https://www.google.com/search?q=Old%20Faithful%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Old Faithful</strong></a>, and <a class="loc-link" href="https://www.google.com/search?q=Grand%20Prismatic%20Spring%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Grand Prismatic Spring</strong></a> via the <a class="loc-link" href="https://www.google.com/search?q=Fairy%20Falls%20Overlook%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Fairy Falls overlook</a>.</div></div>
-              <div class="timeline-row"><div class="timeline-time">Evening</div><div class="timeline-desc">Optional <a class="loc-link" href="https://www.google.com/search?q=Firehole%20Lake%20Drive%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Firehole Lake Drive</a>, then exit through the <a class="loc-link" href="https://www.google.com/search?q=West%20Entrance%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">West Entrance</a>.</div></div>
+              <div class="timeline-row"><div class="timeline-time">6:30 AM</div><div class="timeline-desc">Break camp at Fishing Bridge and depart — well ahead of the 11:00 AM checkout. Don't wait; this is the day that punishes a late start.</div></div>
+              <div class="timeline-row"><div class="timeline-time">6:30–6:55 AM</div><div class="timeline-desc">🚗 Drive to Canyon Village and pass on through (~16 mi, ~25 min) — you covered Artist Point yesterday, no stop needed.</div></div>
+              <div class="timeline-row"><div class="timeline-time">6:55–7:40 AM</div><div class="timeline-desc">🚗 Drive to Tower Fall via Dunraven Pass (~19 mi, ~45 min — a slower mountain road).</div></div>
+              <div class="timeline-row"><div class="timeline-time">7:40–8:00 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Tower%20Fall%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Tower Fall</strong></a> — short walk to the overlook (a few hundred yards), moderate-size lot. The 132-ft falls framed by volcanic pinnacles is a quick, easy photo stop.</div></div>
+              <div class="timeline-row"><div class="timeline-time">8:00–9:00 AM</div><div class="timeline-desc">🚗🦬 <a class="loc-link" href="https://www.google.com/search?q=Lamar%20Valley%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Lamar Valley</strong></a> — drive east from Tower Junction 10–15 mi in, then back out. Yellowstone's best wildlife-watching road: wolves, bison, pronghorn. Budget the full hour — bison jams are common and are half the experience. Wide shoulders fit the RV; pull fully off the pavement.</div></div>
+              <div class="timeline-row"><div class="timeline-time">9:00–9:35 AM</div><div class="timeline-desc">🚗 Back to Tower Junction, then on to Mammoth Hot Springs (~18 mi, ~35 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">9:35–10:20 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Mammoth%20Hot%20Springs%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Mammoth Hot Springs</strong></a> — lower terraces boardwalk, flat, 30–45 min, from the main lot (RV-friendly). The upper terrace loop is a narrow one-way drive that adds ~30 min; if you're towing anything, walk the boardwalk connector instead of driving it.</div></div>
+              <div class="timeline-row"><div class="timeline-time">10:20–11:00 AM</div><div class="timeline-desc">🚗 Drive to Norris Geyser Basin (~21 mi, ~40 min). <em>Optional — skip straight to Madison if you're already behind schedule.</em></div></div>
+              <div class="timeline-row"><div class="timeline-time">11:00–11:45 AM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Norris%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Norris Geyser Basin</strong></a>, <a class="loc-link" href="https://www.google.com/search?q=Porcelain%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Porcelain Basin loop</a> — flat boardwalk, ~0.5 mi / 30–45 min, large lot. The hottest, most active thermal area in the park, and often skipped — so usually less crowded than the big names.</div></div>
+              <div class="timeline-row"><div class="timeline-time">11:45 AM–12:10 PM</div><div class="timeline-desc">🚗 Drive via Madison Junction to Old Faithful (~30 mi, ~45 min combined).</div></div>
+              <div class="timeline-row"><div class="timeline-time">12:10–1:10 PM</div><div class="timeline-desc">🚶 <a class="loc-link" href="https://www.google.com/search?q=Old%20Faithful%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Old Faithful</strong></a> — eruptions every 60–110 min, posted at the visitor center; benches around the boardwalk seat everyone comfortably. Massive paved lot with dedicated RV/bus parking. Grab lunch at the general store while you wait — the wait itself is unpredictable, so this hour is the softest part of the schedule to compress if you're behind.</div></div>
+              <div class="timeline-row"><div class="timeline-time">1:10–1:25 PM</div><div class="timeline-desc">🚗 Drive to the Fairy Falls trailhead / Midway Geyser Basin (~9 mi, ~15 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">1:25–2:15 PM</div><div class="timeline-desc">🥾 <a class="loc-link" href="https://www.google.com/search?q=Grand%20Prismatic%20Spring%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener"><strong>Grand Prismatic Spring</strong></a> via the <a class="loc-link" href="https://www.google.com/search?q=Fairy%20Falls%20Overlook%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Fairy Falls overlook</a> — a real hike this time: 1.6-mi round trip with genuine elevation gain to the overlook platform, ~45–60 min round trip. This is the aerial view that shows the rainbow colors; the boardwalk at lake level does not. Trailhead lot is popular in August — the RV fits, but expect to circle for a spot. Best light is midday, which is exactly when you'll be there.</div></div>
+              <div class="timeline-row"><div class="timeline-time">2:15–2:35 PM</div><div class="timeline-desc">🚗 <a class="loc-link" href="https://www.google.com/search?q=Firehole%20Lake%20Drive%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Firehole Lake Drive</a> — a one-way scenic loop past Great Fountain Geyser (~3 mi, ~15–20 min). <em>Optional — skip if it's past 2:00 PM.</em></div></div>
+              <div class="timeline-row"><div class="timeline-time">2:35–3:10 PM</div><div class="timeline-desc">🚗 Drive via Madison to the <a class="loc-link" href="https://www.google.com/search?q=West%20Entrance%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">West Entrance</a> and West Yellowstone (~21 mi, ~35 min).</div></div>
+              <div class="timeline-row"><div class="timeline-time">~3:10 PM</div><div class="timeline-desc">Arrive Yellowstone Park/West Gate KOA, check in, set up camp — dinner in West Yellowstone town.</div></div>
             </div>
 
             <div class="highlight-chips">
@@ -438,10 +484,10 @@
 
             <div class="trail-note">
               <span class="trail-note-label">From the trail</span>
-              Leave Fishing Bridge by 7 AM — this is the big day. <a class="loc-link" href="https://www.google.com/search?q=Lamar%20Valley%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Lamar Valley</a> bison will stop your vehicle; build buffer time. For Grand Prismatic, the <a class="loc-link" href="https://www.google.com/search?q=Fairy%20Falls%20Overlook%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Fairy Falls overlook</a> is the classic aerial view — the boardwalk at lake level doesn't show the colors at all. <a class="loc-link" href="https://www.google.com/search?q=Norris%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Norris Geyser Basin</a> is often skipped but is the hottest, most active area in the park: the <a class="loc-link" href="https://www.google.com/search?q=Porcelain%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Porcelain Basin</a> loop is 800 meters and unmissable.
+              Leave Fishing Bridge by 6:30 AM — this is the big day. <a class="loc-link" href="https://www.google.com/search?q=Lamar%20Valley%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Lamar Valley</a> bison will stop your vehicle; build buffer time. For Grand Prismatic, the <a class="loc-link" href="https://www.google.com/search?q=Fairy%20Falls%20Overlook%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Fairy Falls overlook</a> is the classic aerial view — the boardwalk at lake level doesn't show the colors at all — and it's the one real hike of the day, so save some energy for it. <a class="loc-link" href="https://www.google.com/search?q=Norris%20Geyser%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Norris Geyser Basin</a> is often skipped but is the hottest, most active area in the park: the <a class="loc-link" href="https://www.google.com/search?q=Porcelain%20Basin%2C%20Yellowstone%20National%20Park" target="_blank" rel="noopener">Porcelain Basin</a> loop is 800 meters and unmissable — but it's also the easiest stop to cut if the morning ran long.
             </div>
 
-            <div class="alert alert-red"><span class="alert-icon">🚨</span><span><strong>This is an aggressive day</strong> that may take 10–12 or more hours with traffic, parking, and wildlife jams. Norris or Firehole Lake Drive should be treated as optional if time becomes tight.</span></div>
+            <div class="alert alert-red"><span class="alert-icon">🚨</span><span><strong>This is an aggressive day.</strong> The plan above pencils out to about 8.5–9 hours door to door, but August crowds, Old Faithful's unpredictable eruption timing, and extra wildlife jams commonly push it to 10–12+ hours in practice. Treat Norris and Firehole Lake Drive as the first cuts if you're behind by early afternoon — everything else is hard to skip without losing a headline stop.</span></div>
 
             <div class="info-block">
               <div class="info-block-label">Stay · confirmed</div>
@@ -565,14 +611,31 @@
       </div>
 
       <div class="checklist-group" data-group="urgent">
-        <h3 class="checklist-group-title"><span class="group-dot red"></span>Urgent</h3>
+        <h3>
+          <button class="checklist-group-header" data-accordion-key="checklist-urgent" aria-expanded="false" aria-controls="checklist-urgent-body" id="checklist-urgent-header">
+            <span class="group-dot red"></span>
+            <span class="checklist-group-title-text">Urgent</span>
+            <span class="group-count" data-group-count>0/3</span>
+            <span class="day-chevron" aria-hidden="true">▾</span>
+          </button>
+        </h3>
+        <div class="checklist-group-body" id="checklist-urgent-body" role="region" aria-labelledby="checklist-urgent-header" hidden>
         <label class="check-item" style="border-left-color:#c1462f"><input class="check-input" type="checkbox" data-key="cancel-gardiner"><span class="check-text"><span class="check-title">Cancel Yellowstone RV Park, Gardiner</span><span class="check-sub">Confirmation #162327 · (406) 848-7496 · cancel by August 13.</span></span></label>
         <label class="check-item" style="border-left-color:#c1462f"><input class="check-input" type="checkbox" data-key="cancel-bozeman"><span class="check-text"><span class="check-title">Cancel Bear Canyon Campground, Bozeman</span><span class="check-sub">Confirmation #2026050558 · (406) 587-1575 · cancel by August 17.</span></span></label>
         <label class="check-item" style="border-left-color:#c1462f"><input class="check-input" type="checkbox" data-key="confirm-return-timing"><span class="check-text"><span class="check-title">Confirm August 19 RV return timing</span><span class="check-sub">Verify the exact deadline and whether an earlier or adjusted return is possible.</span></span></label>
+        </div>
       </div>
 
       <div class="checklist-group" data-group="reservations">
-        <h3 class="checklist-group-title"><span class="group-dot amber"></span>Reservations &amp; logistics</h3>
+        <h3>
+          <button class="checklist-group-header" data-accordion-key="checklist-reservations" aria-expanded="false" aria-controls="checklist-reservations-body" id="checklist-reservations-header">
+            <span class="group-dot amber"></span>
+            <span class="checklist-group-title-text">Reservations &amp; logistics</span>
+            <span class="group-count" data-group-count>0/10</span>
+            <span class="day-chevron" aria-hidden="true">▾</span>
+          </button>
+        </h3>
+        <div class="checklist-group-body" id="checklist-reservations-body" role="region" aria-labelledby="checklist-reservations-header" hidden>
         <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="download-reservations"><span class="check-text"><span class="check-title">Download all reservations</span></span></label>
         <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="save-confirmations-offline"><span class="check-text"><span class="check-title">Save confirmations offline</span></span></label>
         <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-alpine-late-arrival"><span class="check-text"><span class="check-title">Confirm Alpine late-arrival procedure</span></span></label>
@@ -583,10 +646,19 @@
         <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="offline-google-maps"><span class="check-text"><span class="check-title">Download offline Google Maps areas</span></span></label>
         <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-flight-seats"><span class="check-text"><span class="check-title">Confirm flight seats</span></span></label>
         <label class="check-item" style="border-left-color:#d9a441"><input class="check-input" type="checkbox" data-key="confirm-airport-transport"><span class="check-text"><span class="check-title">Confirm airport-to-rental transportation</span></span></label>
+        </div>
       </div>
 
       <div class="checklist-group" data-group="rv-inspection">
-        <h3 class="checklist-group-title"><span class="group-dot blue"></span>RV inspection</h3>
+        <h3>
+          <button class="checklist-group-header" data-accordion-key="checklist-rv-inspection" aria-expanded="false" aria-controls="checklist-rv-inspection-body" id="checklist-rv-inspection-header">
+            <span class="group-dot blue"></span>
+            <span class="checklist-group-title-text">RV inspection</span>
+            <span class="group-count" data-group-count>0/11</span>
+            <span class="day-chevron" aria-hidden="true">▾</span>
+          </button>
+        </h3>
+        <div class="checklist-group-body" id="checklist-rv-inspection-body" role="region" aria-labelledby="checklist-rv-inspection-header" hidden>
         <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-exterior-photos"><span class="check-text"><span class="check-title">Exterior damage photos</span></span></label>
         <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-tire-condition"><span class="check-text"><span class="check-title">Tire condition</span></span></label>
         <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-fuel-level"><span class="check-text"><span class="check-title">Fuel level</span></span></label>
@@ -598,10 +670,19 @@
         <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-gray-tank"><span class="check-text"><span class="check-title">Gray tank instructions</span></span></label>
         <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-black-tank"><span class="check-text"><span class="check-title">Black tank instructions</span></span></label>
         <label class="check-item" style="border-left-color:#3d6ea5"><input class="check-input" type="checkbox" data-key="rv-emergency-number"><span class="check-text"><span class="check-title">Emergency roadside number</span></span></label>
+        </div>
       </div>
 
       <div class="checklist-group" data-group="packing">
-        <h3 class="checklist-group-title"><span class="group-dot violet"></span>Packing</h3>
+        <h3>
+          <button class="checklist-group-header" data-accordion-key="checklist-packing" aria-expanded="false" aria-controls="checklist-packing-body" id="checklist-packing-header">
+            <span class="group-dot violet"></span>
+            <span class="checklist-group-title-text">Packing</span>
+            <span class="group-count" data-group-count>0/18</span>
+            <span class="day-chevron" aria-hidden="true">▾</span>
+          </button>
+        </h3>
+        <div class="checklist-group-body" id="checklist-packing-body" role="region" aria-labelledby="checklist-packing-header" hidden>
         <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-binoculars"><span class="check-text"><span class="check-title">Binoculars</span></span></label>
         <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-camera"><span class="check-text"><span class="check-title">Camera</span></span></label>
         <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-camera-batteries"><span class="check-text"><span class="check-title">Camera batteries</span></span></label>
@@ -620,16 +701,26 @@
         <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-coffee"><span class="check-text"><span class="check-title">Coffee supplies</span></span></label>
         <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-easy-dinners"><span class="check-text"><span class="check-title">Easy dinners</span></span></label>
         <label class="check-item" style="border-left-color:#7a5ba6"><input class="check-input" type="checkbox" data-key="pack-road-snacks"><span class="check-text"><span class="check-title">Road snacks</span></span></label>
+        </div>
       </div>
 
       <div class="checklist-group" data-group="daily-habits">
-        <h3 class="checklist-group-title"><span class="group-dot green"></span>Daily habits</h3>
+        <h3>
+          <button class="checklist-group-header" data-accordion-key="checklist-daily-habits" aria-expanded="false" aria-controls="checklist-daily-habits-body" id="checklist-daily-habits-header">
+            <span class="group-dot green"></span>
+            <span class="checklist-group-title-text">Daily habits</span>
+            <span class="group-count" data-group-count>0/6</span>
+            <span class="day-chevron" aria-hidden="true">▾</span>
+          </button>
+        </h3>
+        <div class="checklist-group-body" id="checklist-daily-habits-body" role="region" aria-labelledby="checklist-daily-habits-header" hidden>
         <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-fuel-half"><span class="check-text"><span class="check-title">Fuel above half tank</span></span></label>
         <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-secure-food"><span class="check-text"><span class="check-title">Secure food and scented items</span></span></label>
         <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-review-weather"><span class="check-text"><span class="check-title">Review weather</span></span></label>
         <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-review-closures"><span class="check-text"><span class="check-title">Review road closures</span></span></label>
         <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-early-start"><span class="check-text"><span class="check-title">Start wildlife days early</span></span></label>
         <label class="check-item" style="border-left-color:#4e8c53"><input class="check-input" type="checkbox" data-key="habit-quiet-moment"><span class="check-text"><span class="check-title">Take one quiet photo-free moment together</span></span></label>
+        </div>
       </div>
     </section>
 
@@ -638,93 +729,153 @@
       <div class="section-head">
         <div class="section-kicker">Reservations</div>
         <h2 class="section-title" id="reservationsTitle">Every confirmation in one place</h2>
-        <p class="section-lede">Confirmation numbers are hidden by default. Tap Reveal to view them for this session.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-label">Delta flights</div>
-        <div class="card-title" style="font-size:16px">SFO ⇄ SLC · Aug 15 &amp; Aug 19</div>
-        <div class="reveal-row" data-reveal-group="res-flights" style="margin-top:8px">
-          <span class="reveal-value" data-secret="GIFPVV">••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <p class="section-lede">Confirmation numbers are hidden by default. Tap a card to expand it, then tap Reveal to view a number for this session.</p>
+        <div class="checklist-btns" style="margin-top:10px">
+          <button class="btn btn-sm" id="btnResExpandAll" type="button">Expand all</button>
+          <button class="btn btn-sm" id="btnResCollapseAll" type="button">Collapse all</button>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-label">Cruise America RV</div>
-        <div class="card-title" style="font-size:16px">Ultra Compact RV, Millcreek</div>
-        <div class="reveal-row" data-reveal-group="res-rv" style="margin-top:8px">
-          <span class="reveal-value" data-secret="792536">••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <button class="res-header" data-accordion-key="res-flights" aria-expanded="false" aria-controls="res-flights-body" id="res-flights-header">
+          <span class="res-header-text">
+            <span class="card-label">Delta flights</span>
+            <span class="card-title" style="font-size:16px">SFO ⇄ SLC · Aug 15 &amp; Aug 19</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-flights-body" role="region" aria-labelledby="res-flights-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-flights" style="margin-top:8px">
+            <span class="reveal-value" data-secret="GIFPVV">••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
         </div>
-        <div class="btn-row"><a class="btn btn-sm" href="tel:+18012880930">📞 Call</a><a class="btn btn-sm" data-maps-query="4125 S State St, Millcreek, UT 84107" href="https://www.google.com/maps/search/?api=1&amp;query=4125%20S%20State%20St%2C%20Millcreek%2C%20UT%2084107" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://www.cruiseamerica.com/rv-rental-locations/utah/salt-lake-city" target="_blank" rel="noopener">🌐 Website</a></div>
       </div>
 
       <div class="card">
-        <div class="card-label">Alpine Valley RV Resort</div>
-        <div class="card-title" style="font-size:16px">Aug 15–16 · Alpine, WY</div>
-        <div class="reveal-row" data-reveal-group="res-alpine" style="margin-top:8px">
-          <span class="reveal-value" data-secret="R00000003536">••••••••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <button class="res-header" data-accordion-key="res-rv" aria-expanded="false" aria-controls="res-rv-body" id="res-rv-header">
+          <span class="res-header-text">
+            <span class="card-label">Cruise America RV</span>
+            <span class="card-title" style="font-size:16px">Ultra Compact RV, Millcreek</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-rv-body" role="region" aria-labelledby="res-rv-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-rv" style="margin-top:8px">
+            <span class="reveal-value" data-secret="792536">••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+          <div class="btn-row"><a class="btn btn-sm" href="tel:+18012880930">📞 Call</a><a class="btn btn-sm" data-maps-query="4125 S State St, Millcreek, UT 84107" href="https://www.google.com/maps/search/?api=1&amp;query=4125%20S%20State%20St%2C%20Millcreek%2C%20UT%2084107" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://www.cruiseamerica.com/rv-rental-locations/utah/salt-lake-city" target="_blank" rel="noopener">🌐 Website</a></div>
         </div>
-        <div class="btn-row"><a class="btn btn-sm" data-maps-query="64 Lunch Counter Lane, Alpine, WY 83128" href="https://www.google.com/maps/search/?api=1&amp;query=64%20Lunch%20Counter%20Lane%2C%20Alpine%2C%20WY%2083128" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://alpinevalleyresortwy.com/" target="_blank" rel="noopener">🌐 Website</a></div>
       </div>
 
       <div class="card">
-        <div class="card-label">Headwaters Campground at Flagg Ranch</div>
-        <div class="card-title" style="font-size:16px">Aug 16–17 · Grand Teton NP</div>
-        <div class="reveal-row" data-reveal-group="res-headwaters" style="margin-top:8px">
-          <span class="reveal-value" data-secret="0805777960-1">•••••••••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <button class="res-header" data-accordion-key="res-alpine" aria-expanded="false" aria-controls="res-alpine-body" id="res-alpine-header">
+          <span class="res-header-text">
+            <span class="card-label">Alpine Valley RV Resort</span>
+            <span class="card-title" style="font-size:16px">Aug 15–16 · Alpine, WY</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-alpine-body" role="region" aria-labelledby="res-alpine-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-alpine" style="margin-top:8px">
+            <span class="reveal-value" data-secret="R00000003536">••••••••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+          <div class="btn-row"><a class="btn btn-sm" data-maps-query="64 Lunch Counter Lane, Alpine, WY 83128" href="https://www.google.com/maps/search/?api=1&amp;query=64%20Lunch%20Counter%20Lane%2C%20Alpine%2C%20WY%2083128" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://alpinevalleyresortwy.com/" target="_blank" rel="noopener">🌐 Website</a></div>
         </div>
-        <div class="btn-row"><a class="btn btn-sm" data-maps-query="100 Grassy Lake Rd, Moran, WY 83013" href="https://www.google.com/maps/search/?api=1&amp;query=100%20Grassy%20Lake%20Rd%2C%20Moran%2C%20WY%2083013" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://www.recreation.gov/camping/campgrounds/258832" target="_blank" rel="noopener">🌐 Website</a></div>
       </div>
 
       <div class="card">
-        <div class="card-label">Fishing Bridge RV Park</div>
-        <div class="card-title" style="font-size:16px">Aug 17–18 · Yellowstone NP</div>
-        <div class="reveal-row" data-reveal-group="res-fishingbridge" style="margin-top:8px">
-          <span class="reveal-value" data-secret="20880487">••••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <button class="res-header" data-accordion-key="res-headwaters" aria-expanded="false" aria-controls="res-headwaters-body" id="res-headwaters-header">
+          <span class="res-header-text">
+            <span class="card-label">Headwaters Campground at Flagg Ranch</span>
+            <span class="card-title" style="font-size:16px">Aug 16–17 · Grand Teton NP</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-headwaters-body" role="region" aria-labelledby="res-headwaters-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-headwaters" style="margin-top:8px">
+            <span class="reveal-value" data-secret="0805777960-1">•••••••••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+          <div class="btn-row"><a class="btn btn-sm" data-maps-query="100 Grassy Lake Rd, Moran, WY 83013" href="https://www.google.com/maps/search/?api=1&amp;query=100%20Grassy%20Lake%20Rd%2C%20Moran%2C%20WY%2083013" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://www.recreation.gov/camping/campgrounds/258832" target="_blank" rel="noopener">🌐 Website</a></div>
         </div>
-        <div class="btn-row"><a class="btn btn-sm" href="tel:+13073447311">📞 Call</a><a class="btn btn-sm" data-maps-query="22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" href="https://www.google.com/maps/search/?api=1&amp;query=22%20Fishing%20Bridge%20RV%20Park%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://www.yellowstonenationalparklodges.com/lodgings/campground/fishing-bridge-rv-park/" target="_blank" rel="noopener">🌐 Website</a></div>
       </div>
 
       <div class="card">
-        <div class="card-label">Yellowstone Park / West Gate KOA Holiday</div>
-        <div class="card-title" style="font-size:16px">Aug 18–19 · West Yellowstone, MT</div>
-        <div class="reveal-row" data-reveal-group="res-koa" style="margin-top:8px">
-          <span class="reveal-value" data-secret="22318444">••••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <button class="res-header" data-accordion-key="res-fishingbridge" aria-expanded="false" aria-controls="res-fishingbridge-body" id="res-fishingbridge-header">
+          <span class="res-header-text">
+            <span class="card-label">Fishing Bridge RV Park</span>
+            <span class="card-title" style="font-size:16px">Aug 17–18 · Yellowstone NP</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-fishingbridge-body" role="region" aria-labelledby="res-fishingbridge-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-fishingbridge" style="margin-top:8px">
+            <span class="reveal-value" data-secret="20880487">••••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+          <div class="btn-row"><a class="btn btn-sm" href="tel:+13073447311">📞 Call</a><a class="btn btn-sm" data-maps-query="22 Fishing Bridge RV Park Rd, Yellowstone National Park, WY 82190" href="https://www.google.com/maps/search/?api=1&amp;query=22%20Fishing%20Bridge%20RV%20Park%20Rd%2C%20Yellowstone%20National%20Park%2C%20WY%2082190" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://www.yellowstonenationalparklodges.com/lodgings/campground/fishing-bridge-rv-park/" target="_blank" rel="noopener">🌐 Website</a></div>
         </div>
-        <div class="card-meta">Wi-Fi password is revealed with the reservation above — see Day 4.</div>
-        <div class="btn-row"><a class="btn btn-sm" data-maps-query="3305 Targhee Pass Highway, West Yellowstone, MT 59758" href="https://www.google.com/maps/search/?api=1&amp;query=3305%20Targhee%20Pass%20Highway%2C%20West%20Yellowstone%2C%20MT%2059758" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://koa.com/campgrounds/yellowstone-park/site-type/rv-camping-sites/" target="_blank" rel="noopener">🌐 Website</a></div>
+      </div>
+
+      <div class="card">
+        <button class="res-header" data-accordion-key="res-koa" aria-expanded="false" aria-controls="res-koa-body" id="res-koa-header">
+          <span class="res-header-text">
+            <span class="card-label">Yellowstone Park / West Gate KOA Holiday</span>
+            <span class="card-title" style="font-size:16px">Aug 18–19 · West Yellowstone, MT</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-koa-body" role="region" aria-labelledby="res-koa-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-koa" style="margin-top:8px">
+            <span class="reveal-value" data-secret="22318444">••••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+          <div class="card-meta">Wi-Fi password is revealed with the reservation above — see Day 4.</div>
+          <div class="btn-row"><a class="btn btn-sm" data-maps-query="3305 Targhee Pass Highway, West Yellowstone, MT 59758" href="https://www.google.com/maps/search/?api=1&amp;query=3305%20Targhee%20Pass%20Highway%2C%20West%20Yellowstone%2C%20MT%2059758" target="_blank" rel="noopener">🗺️ Maps</a><a class="btn btn-sm" href="https://koa.com/campgrounds/yellowstone-park/site-type/rv-camping-sites/" target="_blank" rel="noopener">🌐 Website</a></div>
+        </div>
       </div>
 
       <div class="card" style="border-left:4px solid #c1462f;">
-        <div class="card-label">Cancellation: Yellowstone RV Park, Gardiner</div>
-        <div class="reveal-row" data-reveal-group="res-gardiner" style="margin-top:8px">
-          <span class="reveal-value" data-secret="162327">••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <button class="res-header" data-accordion-key="res-gardiner" aria-expanded="false" aria-controls="res-gardiner-body" id="res-gardiner-header">
+          <span class="res-header-text">
+            <span class="card-label">Cancellation: Yellowstone RV Park, Gardiner</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-gardiner-body" role="region" aria-labelledby="res-gardiner-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-gardiner" style="margin-top:8px">
+            <span class="reveal-value" data-secret="162327">••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+          <div class="btn-row"><a class="btn btn-sm" href="tel:+14068487496">📞 Call to cancel</a></div>
         </div>
-        <div class="btn-row"><a class="btn btn-sm" href="tel:+14068487496">📞 Call to cancel</a></div>
       </div>
 
       <div class="card" style="border-left:4px solid #c1462f;">
-        <div class="card-label">Cancellation: Bear Canyon Campground, Bozeman</div>
-        <div class="reveal-row" data-reveal-group="res-bozeman" style="margin-top:8px">
-          <span class="reveal-value" data-secret="2026050558">••••••••••</span>
-          <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
-          <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+        <button class="res-header" data-accordion-key="res-bozeman" aria-expanded="false" aria-controls="res-bozeman-body" id="res-bozeman-header">
+          <span class="res-header-text">
+            <span class="card-label">Cancellation: Bear Canyon Campground, Bozeman</span>
+          </span>
+          <span class="day-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="res-body" id="res-bozeman-body" role="region" aria-labelledby="res-bozeman-header" hidden>
+          <div class="reveal-row" data-reveal-group="res-bozeman" style="margin-top:8px">
+            <span class="reveal-value" data-secret="2026050558">••••••••••</span>
+            <button class="reveal-btn" data-reveal-toggle type="button">Reveal</button>
+            <button class="copy-btn" data-copy-target type="button" aria-label="Copy confirmation number" hidden>⧉</button>
+          </div>
+          <div class="btn-row"><a class="btn btn-sm" href="tel:+14065871575">📞 Call to cancel</a></div>
         </div>
-        <div class="btn-row"><a class="btn btn-sm" href="tel:+14065871575">📞 Call to cancel</a></div>
       </div>
 
       <h3 class="card-title" style="margin-top:26px;font-size:16px;">Official references</h3>
