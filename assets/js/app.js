@@ -44,61 +44,61 @@ const SHOW_SENSITIVE_DETAILS = true;
   }
 
   /* ---------------------------------------------------------------
-     Day accordions
+     Generic accordion groups — powers Days, RV walkthrough,
+     Checklist groups, and Reservation cards with the same tap-to-
+     expand behavior and per-device persistence.
      --------------------------------------------------------------- */
-  const EXPANDED_KEY = "rg-yellowstone-expanded-days";
+  function createAccordion(headerSelector, groupKey) {
+    const storageKey = "rg-yellowstone-expanded-" + groupKey;
+    const headers = $$(headerSelector);
 
-  function readExpandedSet() {
-    try {
-      return new Set(JSON.parse(localStorage.getItem(EXPANDED_KEY) || "[]"));
-    } catch (e) {
-      return new Set();
+    function readExpanded() {
+      try { return new Set(JSON.parse(localStorage.getItem(storageKey) || "[]")); }
+      catch (e) { return new Set(); }
     }
-  }
-
-  function writeExpandedSet(set) {
-    try {
-      localStorage.setItem(EXPANDED_KEY, JSON.stringify(Array.from(set)));
-    } catch (e) { /* storage unavailable — ignore */ }
-  }
-
-  function setDayOpen(header, body, open) {
-    header.setAttribute("aria-expanded", String(open));
-    body.hidden = !open;
-  }
-
-  function setupAccordions() {
-    const expanded = readExpandedSet();
-    $$(".day-header").forEach((header) => {
+    function writeExpanded(set) {
+      try { localStorage.setItem(storageKey, JSON.stringify(Array.from(set))); }
+      catch (e) { /* storage unavailable — ignore */ }
+    }
+    function setOpen(header, open) {
       const body = document.getElementById(header.getAttribute("aria-controls"));
-      const card = header.closest(".day-card");
-      if (expanded.has(card.id)) setDayOpen(header, body, true);
+      header.setAttribute("aria-expanded", String(open));
+      body.hidden = !open;
+    }
+
+    const expanded = readExpanded();
+    headers.forEach((header) => {
+      const key = header.dataset.accordionKey;
+      if (expanded.has(key)) setOpen(header, true);
 
       header.addEventListener("click", () => {
         const isOpen = header.getAttribute("aria-expanded") === "true";
-        setDayOpen(header, body, !isOpen);
-        const set = readExpandedSet();
-        if (isOpen) set.delete(card.id); else set.add(card.id);
-        writeExpandedSet(set);
+        setOpen(header, !isOpen);
+        const set = readExpanded();
+        if (isOpen) set.delete(key); else set.add(key);
+        writeExpanded(set);
       });
     });
-  }
 
-  function expandAllDays() {
-    $$(".day-header").forEach((header) => {
-      const body = document.getElementById(header.getAttribute("aria-controls"));
-      setDayOpen(header, body, true);
-    });
-    const set = new Set($$(".day-card").map((c) => c.id));
-    writeExpandedSet(set);
-  }
-
-  function collapseAllDays() {
-    $$(".day-header").forEach((header) => {
-      const body = document.getElementById(header.getAttribute("aria-controls"));
-      setDayOpen(header, body, false);
-    });
-    writeExpandedSet(new Set());
+    return {
+      open(key) {
+        const header = headers.find((h) => h.dataset.accordionKey === key);
+        if (!header) return;
+        setOpen(header, true);
+        const set = readExpanded();
+        set.add(key);
+        writeExpanded(set);
+      },
+      expandAll() {
+        const set = new Set();
+        headers.forEach((h) => { setOpen(h, true); set.add(h.dataset.accordionKey); });
+        writeExpanded(set);
+      },
+      collapseAll() {
+        headers.forEach((h) => setOpen(h, false));
+        writeExpanded(new Set());
+      },
+    };
   }
 
   /* ---------------------------------------------------------------
@@ -133,7 +133,7 @@ const SHOW_SENSITIVE_DETAILS = true;
      --------------------------------------------------------------- */
   function checklistStorageKey(cb) { return "rg-yellowstone-" + cb.dataset.key; }
 
-  function setupChecklist() {
+  function setupChecklist(checklistAccordion) {
     const boxes = $$(".check-input[data-key]");
     // A few keys (the two pending cancellations) appear twice in the page —
     // once under "Still to cancel" and once in the Urgent group. Count each
@@ -148,6 +148,13 @@ const SHOW_SENSITIVE_DETAILS = true;
       $("#progressText").textContent = `${done} of ${total} complete`;
       const pct = total ? Math.round((done / total) * 100) : 0;
       $("#progressFill").style.width = pct + "%";
+
+      $$(".checklist-group").forEach((group) => {
+        const groupBoxes = $$(".check-input[data-key]", group);
+        const groupDone = groupBoxes.filter((b) => b.checked).length;
+        const countEl = group.querySelector("[data-group-count]");
+        if (countEl) countEl.textContent = `${groupDone}/${groupBoxes.length}`;
+      });
     }
 
     function syncItemVisual(cb) {
@@ -203,14 +210,8 @@ const SHOW_SENSITIVE_DETAILS = true;
       applyHideCompleted();
     });
 
-    function setGroupsOpen(open) {
-      $$(".checklist-group").forEach((g) => g.style.display = "");
-      // groups are always visible; "expand/collapse all" applies to day accordions
-      // and is also offered here for convenience since checklist groups are flat lists.
-    }
-
-    $("#btnExpandAll").addEventListener("click", () => { expandAllDays(); announce("All days expanded"); });
-    $("#btnCollapseAll").addEventListener("click", () => { collapseAllDays(); announce("All days collapsed"); });
+    $("#btnExpandAll").addEventListener("click", () => { checklistAccordion.expandAll(); announce("All checklist groups expanded"); });
+    $("#btnCollapseAll").addEventListener("click", () => { checklistAccordion.collapseAll(); announce("All checklist groups collapsed"); });
   }
 
   /* ---------------------------------------------------------------
@@ -348,7 +349,7 @@ const SHOW_SENSITIVE_DETAILS = true;
   /* ---------------------------------------------------------------
      "View today" quick action
      --------------------------------------------------------------- */
-  function setupViewToday() {
+  function setupViewToday(daysAccordion) {
     const btn = $("#qaToday");
     if (!btn) return;
     btn.addEventListener("click", (e) => {
@@ -362,16 +363,21 @@ const SHOW_SENSITIVE_DETAILS = true;
         card = cards.find((c) => c.dataset.date >= todayStr) || cards[cards.length - 1];
       }
       if (!card) { window.location.hash = "#days"; return; }
-      const header = card.querySelector(".day-header");
-      const body = document.getElementById(header.getAttribute("aria-controls"));
-      setDayOpen(header, body, true);
-      const set = readExpandedSet();
-      set.add(card.id);
-      writeExpandedSet(set);
+      daysAccordion.open(card.id);
       card.scrollIntoView({ behavior: "smooth", block: "start" });
       card.setAttribute("tabindex", "-1");
       card.focus({ preventScroll: true });
     });
+  }
+
+  /* ---------------------------------------------------------------
+     Section-level expand-all / collapse-all controls (Days, Reservations)
+     --------------------------------------------------------------- */
+  function setupSectionControls(accordion, expandBtnId, collapseBtnId, label) {
+    const expandBtn = $("#" + expandBtnId);
+    const collapseBtn = $("#" + collapseBtnId);
+    if (expandBtn) expandBtn.addEventListener("click", () => { accordion.expandAll(); announce(`All ${label} expanded`); });
+    if (collapseBtn) collapseBtn.addEventListener("click", () => { accordion.collapseAll(); announce(`All ${label} collapsed`); });
   }
 
   /* ---------------------------------------------------------------
@@ -447,13 +453,21 @@ const SHOW_SENSITIVE_DETAILS = true;
   document.addEventListener("DOMContentLoaded", () => {
     setupMapsLinks();
     renderRvChecklist();
-    setupAccordions();
+
+    const daysAccordion = createAccordion(".day-header", "days");
+    createAccordion(".rv-walkthrough-header", "rv"); // single item — no expand-all controls needed
+    const checklistAccordion = createAccordion(".checklist-group-header", "checklist");
+    const reservationsAccordion = createAccordion(".res-header", "reservations");
+
+    setupSectionControls(daysAccordion, "btnDaysExpandAll", "btnDaysCollapseAll", "days");
+    setupSectionControls(reservationsAccordion, "btnResExpandAll", "btnResCollapseAll", "reservations");
+
     setupReviewedButtons();
-    setupChecklist();
+    setupChecklist(checklistAccordion);
     setupReveal();
     setupCopyButtons();
     setupCountdown();
-    setupViewToday();
+    setupViewToday(daysAccordion);
     setupNavHighlighting();
     setupServiceWorker();
   });
